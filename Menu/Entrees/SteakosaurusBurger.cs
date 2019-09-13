@@ -17,11 +17,11 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                List<string> ingredients = new List<string>() { "steakburger pattie" };
-                if (bun) ingredients.Add("bun");
-                if (pickle) ingredients.Add("pickle");
-                if (ketchup) ingredients.Add("ketchup");
-                if (mustard) ingredients.Add("mustard");
+                List<string> ingredients = new List<string>() { "Steakburger Pattie" };
+                if (bun) ingredients.Add("Whole Wheat Bun");
+                if (pickle) ingredients.Add("Pickle");
+                if (ketchup) ingredients.Add("Ketchup");
+                if (mustard) ingredients.Add("Mustard");
                 return ingredients;
             }
         }
