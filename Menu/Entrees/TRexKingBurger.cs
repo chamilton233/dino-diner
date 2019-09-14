@@ -4,74 +4,133 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// a menu item basicly a burger with more stuff
+    /// </summary>
     public class TRexKingBurger
     {
-        private bool bun = true;
-        private bool lettuce = true;
-        private bool tomato = true;
-        private bool onion = true;
-        private bool pickle = true;
-        private bool ketchup = true;
-        private bool mustard = true;
-        private bool mayo = true;
-
+        /// <summary>
+        /// if we include the bun
+        /// </summary>
+        private bool Bun = true;
+        /// <summary>
+        /// if we include the lettuce
+        /// </summary>
+        private bool Lettuce = true;
+        /// <summary>
+        /// if we include the tomato
+        /// </summary>
+        private bool Tomato = true;
+        /// <summary>
+        /// if we include the onion
+        /// </summary>
+        private bool Onion = true;
+        /// <summary>
+        /// if we include the pickle
+        /// </summary>
+        private bool Pickle = true;
+        /// <summary>
+        /// if we include the ketchup
+        /// </summary>
+        private bool Ketchup = true;
+        /// <summary>
+        /// if we include the mustard
+        /// </summary>
+        private bool Mustard = true;
+        /// <summary>
+        /// if we include the mayo
+        /// </summary>
+        private bool Mayo = true;
+        /// <summary>
+        /// the price of the item
+        /// </summary>
         public double Price { get; set; }
+        /// <summary>
+        /// the number of calories it is
+        /// </summary>
         public uint Calories { get; set; }
-
+        /// <summary>
+        /// gets the correct list of ingreadents
+        /// </summary>
         public List<string> Ingredients
         {
             get
             {
                 List<string> ingredients = new List<string>() { "Steakburger Pattie", "Steakburger Pattie", "Steakburger Pattie" };
-                if (bun) ingredients.Add("Whole Wheat Bun");
-                if (lettuce) ingredients.Add("Lettuce");
-                if (tomato) ingredients.Add("Tomato");
-                if (onion) ingredients.Add("Onion");
-                if (pickle) ingredients.Add("Pickle");
-                if (ketchup) ingredients.Add("Ketchup");
-                if (mustard) ingredients.Add("Mustard");
-                if (mayo) ingredients.Add("Mayo");
+                if (Bun) ingredients.Add("Whole Wheat Bun");
+                if (Lettuce) ingredients.Add("Lettuce");
+                if (Tomato) ingredients.Add("Tomato");
+                if (Onion) ingredients.Add("Onion");
+                if (Pickle) ingredients.Add("Pickle");
+                if (Ketchup) ingredients.Add("Ketchup");
+                if (Mustard) ingredients.Add("Mustard");
+                if (Mayo) ingredients.Add("Mayo");
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// constuctor fills in basic infomation about this item
+        /// </summary>
         public TRexKingBurger()
         {
             this.Price = 8.45;
             this.Calories = 728;
         }
-
+        /// <summary>
+        /// holds the bun
+        /// </summary>
         public void HoldBun()
         {
-            this.bun = false;
+            this.Bun = false;
         }
+        /// <summary>
+        /// holds the lettuce
+        /// </summary>
         public void HoldLettuce()
         {
-            this.lettuce = false;
+            this.Lettuce = false;
         }
+        /// <summary>
+        /// holds the tomato
+        /// </summary>
         public void HoldTomato()
         {
-            this.tomato = false;
+            this.Tomato = false;
         }
+        /// <summary>
+        /// holds the onion
+        /// </summary>
         public void HoldOnion()
         {
-            this.onion = false;
+            this.Onion = false;
         }
+        /// <summary>
+        /// holds the pickle
+        /// </summary>
         public void HoldPickle()
         {
-            this.pickle = false;
+            this.Pickle = false;
         }
+        /// <summary>
+        /// holds the ketchup
+        /// </summary>
         public void HoldKetchup()
         {
-            this.ketchup = false;
+            this.Ketchup = false;
         }
+        /// <summary>
+        /// holds the mustard
+        /// </summary>
         public void HoldMustard()
         {
-            this.mustard = false;
+            this.Mustard = false;
         }
+        /// <summary>
+        /// holds the mayo
+        /// </summary>
         public void HoldMayo()
         {
-            this.mayo = false;
+            this.Mayo = false;
         }
     }
 }

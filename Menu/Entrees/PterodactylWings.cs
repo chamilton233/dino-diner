@@ -4,11 +4,22 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// menu item pretty much chicken wings
+    /// </summary>
     public class PterodactylWings
     {
+        /// <summary>
+        /// the price of it
+        /// </summary>
         public double Price { get; set; }
+        /// <summary>
+        /// the number of calories
+        /// </summary>
         public uint Calories { get; set; }
-
+        /// <summary>
+        /// gets the correct ingreadents
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -18,7 +29,9 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// constuctor sets basic info for the item
+        /// </summary>
         public PterodactylWings()
         {
             this.Price = 7.21;

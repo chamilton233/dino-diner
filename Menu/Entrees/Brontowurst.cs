@@ -4,46 +4,73 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// menu item pretty much a braut with the works on top
+    /// </summary>
     public class Brontowurst
     {
-        private bool bun = true;
-        private bool peppers = true;
-        private bool onions = true;
-
+        /// <summary>
+        /// if we include the bun
+        /// </summary>
+        private bool Bun = true;
+        /// <summary>
+        /// if we include the peppers
+        /// </summary>
+        private bool Peppers = true;
+        /// <summary>
+        /// if we include the onions
+        /// </summary>
+        private bool Onions = true;
+        /// <summary>
+        /// the price of the item
+        /// </summary>
         public double Price { get; set; }
+        /// <summary>
+        /// the number of calories it is
+        /// </summary>
         public uint Calories { get; set; }
-
+        /// <summary>
+        /// gets the correct list of ingreadents
+        /// </summary>
         public List<string> Ingredients
         {
             get
             {
                 List<string> ingredients = new List<string>() { "Brautwurst" };
-                if (bun) ingredients.Add("Whole Wheat Bun");
-                if (peppers) ingredients.Add("Peppers");
-                if (onions) ingredients.Add("Onion");
+                if (Bun) ingredients.Add("Whole Wheat Bun");
+                if (Peppers) ingredients.Add("Peppers");
+                if (Onions) ingredients.Add("Onion");
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// constuctor fills in basic infomation about this item
+        /// </summary>
         public Brontowurst()
         {
             this.Price = 5.36;
             this.Calories = 498;
         }
-
+        /// <summary>
+        /// holds the bun
+        /// </summary>
         public void HoldBun()
         {
-            this.bun = false;
+            this.Bun = false;
         }
-
+        /// <summary>
+        /// holds the peppers
+        /// </summary>
         public void HoldPeppers()
         {
-            this.peppers = false;
+            this.Peppers = false;
         }
-
+        /// <summary>
+        /// holds the onions
+        /// </summary>
         public void HoldOnion()
         {
-            this.onions = false;
+            this.Onions = false;
         }
     }
 }
