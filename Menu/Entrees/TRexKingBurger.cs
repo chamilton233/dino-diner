@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// a menu item basicly a burger with more stuff
     /// </summary>
-    public class TRexKingBurger
+    public class TRexKingBurger : Entree
     {
         /// <summary>
         /// if we include the bun
@@ -42,30 +42,21 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         private bool Mayo = true;
         /// <summary>
-        /// the price of the item
-        /// </summary>
-        public double Price { get; set; }
-        /// <summary>
-        /// the number of calories it is
-        /// </summary>
-        public uint Calories { get; set; }
-        /// <summary>
         /// gets the correct list of ingreadents
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Steakburger Pattie", "Steakburger Pattie", "Steakburger Pattie" };
-                if (Bun) ingredients.Add("Whole Wheat Bun");
-                if (Lettuce) ingredients.Add("Lettuce");
-                if (Tomato) ingredients.Add("Tomato");
-                if (Onion) ingredients.Add("Onion");
-                if (Pickle) ingredients.Add("Pickle");
-                if (Ketchup) ingredients.Add("Ketchup");
-                if (Mustard) ingredients.Add("Mustard");
-                if (Mayo) ingredients.Add("Mayo");
-                return ingredients;
+                if (Bun) ingreadients.Add("Whole Wheat Bun");
+                if (Lettuce) ingreadients.Add("Lettuce");
+                if (Tomato) ingreadients.Add("Tomato");
+                if (Onion) ingreadients.Add("Onion");
+                if (Pickle) ingreadients.Add("Pickle");
+                if (Ketchup) ingreadients.Add("Ketchup");
+                if (Mustard) ingreadients.Add("Mustard");
+                if (Mayo) ingreadients.Add("Mayo");
+                return ingreadients;
             }
         }
         /// <summary>
@@ -75,6 +66,9 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 8.45;
             this.Calories = 728;
+            ingreadients.Add("Steakburger Pattie");
+            ingreadients.Add("Steakburger Pattie");
+            ingreadients.Add("Steakburger Pattie");
         }
         /// <summary>
         /// holds the bun

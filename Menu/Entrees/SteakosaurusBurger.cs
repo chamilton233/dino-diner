@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// menu item pretty much a burger
     /// </summary>
-    public class SteakosaurusBurger
+    public class SteakosaurusBurger : Entree
     {
         /// <summary>
         /// if we include the bun
@@ -26,26 +26,17 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         private bool Mustard = true;
         /// <summary>
-        /// the price of it 
-        /// </summary>
-        public double Price { get; set; }
-        /// <summary>
-        /// the number of calories it has
-        /// </summary>
-        public uint Calories { get; set; }
-        /// <summary>
         /// gets the correct ingreadent list
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
-            {
-                List<string> ingredients = new List<string>() { "Steakburger Pattie" };
-                if (Bun) ingredients.Add("Whole Wheat Bun");
-                if (Pickle) ingredients.Add("Pickle");
-                if (Ketchup) ingredients.Add("Ketchup");
-                if (Mustard) ingredients.Add("Mustard");
-                return ingredients;
+            { 
+                if (Bun) ingreadients.Add("Whole Wheat Bun");
+                if (Pickle) ingreadients.Add("Pickle");
+                if (Ketchup) ingreadients.Add("Ketchup");
+                if (Mustard) ingreadients.Add("Mustard");
+                return ingreadients;
             }
         }
         /// <summary>
@@ -55,6 +46,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 5.15;
             this.Calories = 621;
+            ingreadients.Add("Steakburger Pattie");
         }
         /// <summary>
         /// holds the bun

@@ -7,33 +7,24 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// menu item pretty much chicken nuggets
     /// </summary>
-    public class DinoNuggets
+    public class DinoNuggets : Entree
     {
         /// <summary>
-        /// the price of the item
+        /// the number of extranuggets ordered default 0
         /// </summary>
-        public double Price { get; set; }
+        private uint ExtraNuggetCount = 0;
         /// <summary>
-        /// the number of calories it is
+        /// gets the correct list of ingreadents had issue with it adding extra nuggets. worked around it
         /// </summary>
-        public uint Calories { get; set; }
-        /// <summary>
-        /// teh number of nuggets ordered default 6
-        /// </summary>
-        private uint NuggetCount = 6;
-        /// <summary>
-        /// gets the correct list of ingreadents
-        /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
-                List<string> ingredients = new List<string>() {  };
-                for (int i = 0; i < NuggetCount; i++)
+                for (int i = ingreadients.Count; i < 6 + ExtraNuggetCount; i++)
                 {
-                    ingredients.Add("Chicken Nugget");
+                    ingreadients.Add("Chicken Nugget");
                 }
-                return ingredients;
+                return ingreadients;
             }
         }
         /// <summary>
@@ -43,6 +34,10 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 4.25;
             this.Calories = 354;
+            for (int i = 0; i < 6; i++)
+            {
+                ingreadients.Add("Chicken Nugget");
+            }
         }
         /// <summary>
         /// Adds an additional nugget to the meal costs $0.25 and 59 more calories
@@ -51,7 +46,7 @@ namespace DinoDiner.Menu.Entrees
         {
             Price += 0.25;
             Calories += 59;
-            NuggetCount++;
+            ExtraNuggetCount++;
         }
     }
 }

@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// a menu item that is a chicken wrap
     /// </summary>
-    public class VelociWrap
+    public class VelociWrap : Entree
     {
         /// <summary>
         /// if we include the dressing
@@ -20,28 +20,18 @@ namespace DinoDiner.Menu.Entrees
         /// <summary>
         /// if we include the parmasan cheese
         /// </summary>
-        private bool Cheese = true;
-        /// <summary>
-        /// the price of the item
-        /// </summary>
-        public double Price { get; set; }
-        /// <summary>
-        /// the numvber of calories it has
-        /// </summary>
-        public uint Calories { get; set; }
-        
+        private bool Cheese = true;     
         /// <summary>
         /// gets the correct ingreadents list
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Flour Tortilla" , "Chicken Breast" };
-                if (Dressing) ingredients.Add("Ceasar Dressing");
-                if (Lettuce) ingredients.Add("Romaine Lettuce");
-                if (Cheese) ingredients.Add("Parmesan Cheese");
-                return ingredients;
+                if (Dressing) ingreadients.Add("Ceasar Dressing");
+                if (Lettuce) ingreadients.Add("Romaine Lettuce");
+                if (Cheese) ingreadients.Add("Parmesan Cheese");
+                return ingreadients;
             }
         }
         /// <summary>
@@ -51,6 +41,8 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 6.86;
             this.Calories = 356;
+            ingreadients.Add("Flour Tortilla");
+            ingreadients.Add("Chicken Breast");
         }
         /// <summary>
         /// holds the dressing

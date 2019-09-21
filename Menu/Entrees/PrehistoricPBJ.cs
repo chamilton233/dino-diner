@@ -5,7 +5,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// menu item pretty much a peanut butter and jelly sandwitch
     /// </summary>
-    public class PrehistoricPBJ
+    public class PrehistoricPBJ : Entree
     {
         /// <summary>
         /// if we include the peanut butter
@@ -16,24 +16,15 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         private bool Jelly = true;
         /// <summary>
-        /// the price of the item
-        /// </summary>
-        public double Price { get; set; }
-        /// <summary>
-        /// the number of calories it is
-        /// </summary>
-        public uint Calories { get; set; }
-        /// <summary>
         /// gets the correct list of ingreadents
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Bread" };
-                if (PeanutButter) ingredients.Add("Peanut Butter");
-                if (Jelly) ingredients.Add("Jelly");
-                return ingredients;
+                if (PeanutButter) ingreadients.Add("Peanut Butter");
+                if (Jelly) ingreadients.Add("Jelly");
+                return ingreadients;
             }
         }
         /// <summary>
@@ -43,6 +34,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 6.52;
             this.Calories = 483;
+            ingreadients.Add("Bread");
         }
         /// <summary>
         /// holds the peanut butter

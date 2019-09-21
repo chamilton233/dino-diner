@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// menu item pretty much a braut with the works on top
     /// </summary>
-    public class Brontowurst
+    public class Brontowurst : Entree
     {
         /// <summary>
         /// if we include the bun
@@ -32,15 +32,14 @@ namespace DinoDiner.Menu.Entrees
         /// <summary>
         /// gets the correct list of ingreadents
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Brautwurst" };
-                if (Bun) ingredients.Add("Whole Wheat Bun");
-                if (Peppers) ingredients.Add("Peppers");
-                if (Onions) ingredients.Add("Onion");
-                return ingredients;
+                if (Bun) ingreadients.Add("Whole Wheat Bun");
+                if (Peppers) ingreadients.Add("Peppers");
+                if (Onions) ingreadients.Add("Onion");
+                return ingreadients;
             }
         }
         /// <summary>
@@ -50,6 +49,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 5.36;
             this.Calories = 498;
+            ingreadients.Add("Brautwurst");
         }
         /// <summary>
         /// holds the bun
