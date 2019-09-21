@@ -4,9 +4,18 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
+    /// <summary>
+    /// a side item that is french fries inherits from side
+    /// </summary>
     public class Fryceritops : Side
     {
+        /// <summary>
+        /// the size of the side is a Enum of Size
+        /// </summary>
         private Size size;
+        /// <summary>
+        /// geters and seters for size 
+        /// </summary>
         public override Size Size{
             set{
                 size = value;
@@ -30,6 +39,9 @@ namespace DinoDiner.Menu.Sides
                 return size;
             }
         }
+        /// <summary>
+        /// constucts basic info for the item
+        /// </summary>
         public Fryceritops()
         {
             Price = 0.99;

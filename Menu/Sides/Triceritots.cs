@@ -4,9 +4,18 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
+    /// <summary>
+    /// a side item that is tatertots inherits from side
+    /// </summary>
     public class Triceritots : Side
     {
+        /// <summary>
+        /// the size of the side is a Enum of Size
+        /// </summary>
         private Size size;
+        /// <summary>
+        /// geters and seters for size 
+        /// </summary>
         public override Size Size
         {
             set
@@ -33,6 +42,9 @@ namespace DinoDiner.Menu.Sides
                 return size;
             }
         }
+        /// <summary>
+        /// constucts basic info for the item
+        /// </summary>
         public Triceritots()
         {
             Price = 0.99;

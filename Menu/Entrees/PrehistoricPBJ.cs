@@ -3,7 +3,7 @@
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
-    /// menu item pretty much a peanut butter and jelly sandwitch
+    /// menu item pretty much a peanut butter and jelly sandwitch inherits from entree
     /// </summary>
     public class PrehistoricPBJ : Entree
     {

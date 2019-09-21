@@ -4,7 +4,9 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-
+    /// <summary>
+    /// enum of size where small=0 and large =2
+    /// </summary>
     public enum Size
     {
         Small,
@@ -12,13 +14,19 @@ namespace DinoDiner.Menu.Sides
         Large
     }
 
+    /// <summary>
+    /// abstract class for a side
+    /// </summary>
     public abstract class Side
     {
+        /// <summary>
+        /// makes the protected ingreaddents list
+        /// </summary>
         protected List<string> ingreadients = new List<string>(); 
 
         /// <summary>
         /// Gets and sets the price
-        /// </summary>
+        /// </summary>C:\Users\chami\cis400\dino-diner\Menu\Sides\Triceritots.cs
         public double Price { get; set; }
 
         /// <summary>

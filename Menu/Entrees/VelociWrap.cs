@@ -5,7 +5,7 @@ using System.Text;
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
-    /// a menu item that is a chicken wrap
+    /// a menu item that is a chicken wrap inherits from entree
     /// </summary>
     public class VelociWrap : Entree
     {

@@ -4,8 +4,14 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// abstrct class for a entree
+    /// </summary>
     public abstract class Entree
     {
+        /// <summary>
+        /// makes the protected ingreaddents list
+        /// </summary>
         protected List<string> ingreadients = new List<string>();
 
         /// <summary>

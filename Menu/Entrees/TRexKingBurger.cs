@@ -5,7 +5,7 @@ using System.Text;
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
-    /// a menu item basicly a burger with more stuff
+    /// a menu item basicly a burger with more stuff inherits from entree
     /// </summary>
     public class TRexKingBurger : Entree
     {
