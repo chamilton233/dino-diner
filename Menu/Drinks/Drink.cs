@@ -2,26 +2,20 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu.Drinks
 {
-    /// <summary>
-    /// enum of size where small=0 and large =2
-    /// </summary>
-
-
-    /// <summary>
-    /// abstract class for a side
-    /// </summary>
-    public abstract class Side
+    class Drink
     {
         /// <summary>
         /// makes the protected ingreaddents list
         /// </summary>
-        protected List<string> ingreadients = new List<string>(); 
+        protected List<string> ingreadients = new List<string>();
+
+        public bool Ice { get; set; }
 
         /// <summary>
         /// Gets and sets the price
-        /// </summary>C:\Users\chami\cis400\dino-diner\Menu\Sides\Triceritots.cs
+        /// </summary>
         public double Price { get; set; }
 
         /// <summary>
@@ -32,16 +26,16 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public List<string> Ingredients
+        public virtual List<string> Ingredients
         {
-            get{
+            get
+            {
                 return ingreadients;
             }
         }
-        /// <summary>
-        /// Gets or sets the size
-        /// </summary>
-        public virtual Size Size { get; set; }
-
+        public virtual void HoldIce()
+        {
+            Ice = false;
+        }
     }
 }
