@@ -4,7 +4,49 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    class Sodasaurus
+    public class Sodasaurus : Drink
     {
+        private Size size;
+
+        private SodasaurusFlavor flavor;
+        public SodasaurusFlavor Flavor {
+            get { return flavor; }
+            set { flavor = value; }
+        }
+        public override Size Size
+        {
+            set
+            {
+                size = value;
+                switch (size)
+                {
+                    case Size.Small:
+                        Price = 1.50;
+                        Calories = 112;
+                        break;
+                    case Size.Medium:
+                        Price = 2.00;
+                        Calories = 156;
+                        break;
+                    case Size.Large:
+                        Price = 2.50;
+                        Calories = 208;
+                        break;
+                }
+            }
+            get
+            {
+                return size;
+            }
+        }
+
+        public Sodasaurus()
+        {
+            Price = 1.50;
+            Calories = 112;
+            ingreadients.Add("Water");
+            ingreadients.Add("Natural Flavors");
+            ingreadients.Add("Cane Sugar");
+        }
     }
 }

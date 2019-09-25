@@ -4,14 +4,14 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    class Drink
+    public class Drink
     {
         /// <summary>
         /// makes the protected ingreaddents list
         /// </summary>
         protected List<string> ingreadients = new List<string>();
 
-        public bool Ice { get; set; }
+        public bool Ice { get; set; } = true;
 
         /// <summary>
         /// Gets and sets the price
@@ -37,5 +37,7 @@ namespace DinoDiner.Menu.Drinks
         {
             Ice = false;
         }
+
+        public virtual Size Size { get; set; } = Size.Small;
     }
 }
