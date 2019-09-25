@@ -9,10 +9,12 @@ namespace DinoDiner.Menu.Drinks
         private Size size;
 
         private SodasaurusFlavor flavor;
+
         public SodasaurusFlavor Flavor {
             get { return flavor; }
             set { flavor = value; }
         }
+
         public override Size Size
         {
             set
