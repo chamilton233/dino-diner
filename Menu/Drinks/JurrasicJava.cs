@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    class JurrasicJava : Drink
+    public class JurrasicJava : Drink
     {
         private Size size;
 
