@@ -5,7 +5,7 @@ using System.Text;
 namespace DinoDiner.Menu.Drinks
 {
     /// <summary>
-    /// 
+    /// abstract class for all drinks
     /// </summary>
     public abstract class Drink
     {
