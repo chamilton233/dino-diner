@@ -3,13 +3,26 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
-{
+{/// <summary>
+/// its coffee can be decaf and have room for cream
+/// </summary>
     public class JurrasicJava : Drink
     {
+        /// <summary>
+        /// backing of the size 
+        /// </summary>
         private Size size;
-
-        private bool RoomForCream = false;
-        private bool Decaf = false;
+        /// <summary>
+        /// if there is room for cream in the cofee
+        /// </summary>
+        public bool RoomForCream = false;
+        /// <summary>
+        /// if it is decaf or not
+        /// </summary>
+        public bool Decaf = false;
+        /// <summary>
+        /// how size is changed
+        /// </summary>
         public override Size Size
         {
             set
@@ -36,7 +49,9 @@ namespace DinoDiner.Menu.Drinks
                 return size;
             }
         }
-
+        /// <summary>
+        /// the constuctor for this fills in basic info
+        /// </summary>
         public JurrasicJava()
         {
             Price = 0.59;
@@ -45,10 +60,16 @@ namespace DinoDiner.Menu.Drinks
             ingreadients.Add("Water");
             ingreadients.Add("Coffee");
         }
+        /// <summary>
+        /// adds ice
+        /// </summary>
         public void AddIce()
         {
             Ice = true;
         }
+        /// <summary>
+        /// leaves room for cream
+        /// </summary>
         public void LeaveRoomForCream()
         {
             RoomForCream = true;

@@ -4,17 +4,29 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// soda has many flavors
+    /// </summary>
     public class Sodasaurus : Drink
     {
+        /// <summary>
+        /// backing for size
+        /// </summary>
         private Size size;
-
+        /// <summary>
+        /// backing for flavor
+        /// </summary>
         private SodasaurusFlavor flavor;
-
+        /// <summary>
+        /// functionality of flavor
+        /// </summary>
         public SodasaurusFlavor Flavor {
             get { return flavor; }
             set { flavor = value; }
         }
-
+        /// <summary>
+        /// how setting size works
+        /// </summary>
         public override Size Size
         {
             set
@@ -41,7 +53,9 @@ namespace DinoDiner.Menu.Drinks
                 return size;
             }
         }
-
+        /// <summary>
+        /// constuctor for the soda
+        /// </summary>
         public Sodasaurus()
         {
             Price = 1.50;

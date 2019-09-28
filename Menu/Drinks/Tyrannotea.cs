@@ -4,14 +4,92 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// its tea can have lemon or sweet
+    /// </summary>
     public class Tyrannotea : Drink
     {
+        /// <summary>
+        /// backing for size
+        /// </summary>
         private Size size;
+        /// <summary>
+        /// backing for sweet
+        /// </summary>
+        private bool sweet =false;
+        /// <summary>
+        /// how sweet works when changed
+        /// </summary>
+        public bool Sweet {
+            get {
+                return sweet;
+            }
+            set {
+                if (value)
+                {
+                    sweet = true;
+                    ingreadients.Add("Cane Sugar");
+                    switch (size)
+                    {
+                        case Size.Small:
+                            Calories = 8 * 2;
+                            break;
+                        case Size.Medium:
+                            Calories = 16 * 2;
+                            break;
+                        case Size.Large:
+                            Calories = 32 * 2;
+                            break;
+                    }
 
-        private bool Sweet = false;
+                }
+                else
+                {
+                    sweet = false;
+                    ingreadients.Remove("Cane Sugar");
+                    switch (size)
+                    {
+                        case Size.Small:
+                            Calories = 8;
+                            break;
+                        case Size.Medium:
+                            Calories = 16;
+                            break;
+                        case Size.Large:
+                            Calories = 32;
+                            break;
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// backing for lemon
+        /// </summary>
+        private bool lemon = false;
+        /// <summary>
+        /// how lemon is changed
+        /// </summary>
+        public bool Lemon
+        {
+            get {
+                return lemon;
+            }
+            set {
+                lemon = value;
+                if (lemon)
+                {
+                    ingreadients.Add("Lemon");
+                }
+                else
+                {
+                    ingreadients.Remove("Lemon");
+                }
+            }
+        }
 
-        private bool Lemon = false;
-
+        /// <summary>
+        /// how size is changed
+        /// </summary>
         public override Size Size
         {
             set
@@ -21,15 +99,15 @@ namespace DinoDiner.Menu.Drinks
                 {
                     case Size.Small:
                         Price = 0.99;
-                        Calories = 8;
+                        Calories = sweet ? 8 * 2 : Calories = 8;
                         break;
                     case Size.Medium:
                         Price = 1.49;
-                        Calories = 16;
+                        Calories = sweet ? 16 * 2 : Calories = 16;
                         break;
                     case Size.Large:
                         Price = 1.99;
-                        Calories = 32;
+                        Calories = sweet ? 32 * 2 :Calories= 32;
                         break;
                 }
             }
@@ -38,7 +116,9 @@ namespace DinoDiner.Menu.Drinks
                 return size;
             }
         }
-
+        /// <summary>
+        /// basic constuctor puts in default info
+        /// </summary>
         public Tyrannotea()
         {
             Price = 0.99;
@@ -47,24 +127,15 @@ namespace DinoDiner.Menu.Drinks
             ingreadients.Add("Tea");
         }
 
-        public override List<string> Ingredients
-        {
-            get
-            {
-                if (Sweet) ingreadients.Add("Cane Sugar");
-                if (Lemon) ingreadients.Add("Lemon");
-                return ingreadients;
-            }
-        }
-
+        /// <summary>
+        /// adds lemons to the tea
+        /// </summary>
         public void AddLemon()
         {
             Lemon = true;
         }
 
-        public void AddSweet()
-        {
-            Sweet = true;
-        }
+
+
     }
 }

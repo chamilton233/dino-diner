@@ -57,8 +57,54 @@ namespace MenuTest.Drinks
         public void AddLemonWorks()
         {
             Tyrannotea tea = new Tyrannotea();
-            tea.AddLemon();
+            tea.Lemon = true;
             Assert.Contains<string>("Lemon", tea.Ingredients);
+            tea.Lemon = false;
+            Assert.DoesNotContain<string>("Lemon", tea.Ingredients);
+        }
+        [Fact]
+        public void AddSweetGivesCorrectCalories()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.Sweet = true;
+            Assert.Contains<string>("Cane Sugar", tea.Ingredients);
+            Assert.Equal<uint>(16, tea.Calories);
+            tea.Size = Size.Medium;
+            Assert.Equal<uint>(32, tea.Calories);
+            tea.Size = Size.Large;
+            Assert.Equal<uint>(64, tea.Calories);
+            tea.Size = Size.Small;
+            Assert.Equal<uint>(16, tea.Calories);
+        }
+        [Fact]
+        public void AddSweetThenRemoveSweetGivesCorrectCalories()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.Sweet = true;
+            tea.Sweet = false;
+            Assert.DoesNotContain<string>("Cane Sugar", tea.Ingredients);
+            Assert.Equal<uint>(8, tea.Calories);
+            tea.Size = Size.Medium;
+            Assert.Equal<uint>(16, tea.Calories);
+            tea.Size = Size.Large;
+            Assert.Equal<uint>(32, tea.Calories);
+            tea.Size = Size.Small;
+            Assert.Equal<uint>(8, tea.Calories);
+        }
+        [Fact]
+        public void HasCorrectIngredents()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.Contains<string>("Water", tea.Ingredients);
+            Assert.Contains<string>("Tea", tea.Ingredients);
+            tea.Lemon = true;
+            Assert.Contains<string>("Lemon", tea.Ingredients);
+            tea.Sweet = true;
+            Assert.Contains<string>("Cane Sugar", tea.Ingredients);
+            tea.Lemon = false;
+            Assert.DoesNotContain<string>("Lemon", tea.Ingredients);
+            tea.Sweet = false;
+            Assert.DoesNotContain<string>("Cane Sugar", tea.Ingredients);
         }
     }
 }
