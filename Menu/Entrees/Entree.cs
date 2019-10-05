@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// abstrct class for a entree
     /// </summary>
-    public abstract class Entree
+    public abstract class Entree : IMenuItem
     {
         /// <summary>
         /// makes the protected ingreaddents list

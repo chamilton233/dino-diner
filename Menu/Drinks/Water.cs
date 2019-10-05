@@ -10,6 +10,22 @@ namespace DinoDiner.Menu.Drinks
     public class Water : Drink
     {
         /// <summary>
+        /// backing for size
+        /// </summary>
+        private Size size;
+
+        public override Size Size
+        {
+            set
+            {
+                size = value;
+            }
+            get
+            {
+                return size;
+            }
+        }
+        /// <summary>
         /// backing for the lemon 
         /// </summary>
         public bool Lemon = false;
@@ -20,7 +36,7 @@ namespace DinoDiner.Menu.Drinks
         {
             Price = 0.10;
             Calories = 0;
-            ingreadients.Add("Water");
+            
         }
         /// <summary>
         /// returns the correct ingreadednts
@@ -29,6 +45,8 @@ namespace DinoDiner.Menu.Drinks
         {
             get
             {
+                ingreadients = new List<string>();
+                ingreadients.Add("Water");
                 if (Lemon) ingreadients.Add("Lemon");
                 return ingreadients;
             }
@@ -39,6 +57,10 @@ namespace DinoDiner.Menu.Drinks
         public void AddLemon()
         {
             Lemon = true;
+        }
+        public override string ToString()
+        {
+            return $"{size} Water";
         }
     }
 }

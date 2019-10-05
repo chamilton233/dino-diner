@@ -48,6 +48,12 @@ namespace DinoDiner.Menu.Entrees
             Calories += 59;
             ExtraNuggetCount++;
         }
+
+
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
+        }
     }
 }
 //Implement a class to represent the Dino Nuggest entree. 

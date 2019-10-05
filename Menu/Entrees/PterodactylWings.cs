@@ -16,8 +16,23 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 7.21;
             this.Calories = 318;
-            ingreadients.Add("Chicken");
-            ingreadients.Add("Wing Sauce");
+            
+        }
+
+        public override string ToString()
+        {
+            return "Pterodactyl Wings";
+        }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+                ingreadients = new List<string>();
+                ingreadients.Add("Chicken");
+                ingreadients.Add("Wing Sauce");
+                return ingreadients;
+            }
         }
     }
 }

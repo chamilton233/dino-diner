@@ -6,7 +6,7 @@ namespace DinoDiner.Menu.Drinks
 {/// <summary>
 /// its coffee can be decaf and have room for cream
 /// </summary>
-    public class JurrasicJava : Drink
+    public class JurassicJava : Drink
     {
         /// <summary>
         /// backing of the size 
@@ -52,13 +52,12 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// the constuctor for this fills in basic info
         /// </summary>
-        public JurrasicJava()
+        public JurassicJava()
         {
             Price = 0.59;
             Calories = 2;
             Ice = false;
-            ingreadients.Add("Water");
-            ingreadients.Add("Coffee");
+            
         }
         /// <summary>
         /// adds ice
@@ -73,6 +72,27 @@ namespace DinoDiner.Menu.Drinks
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
+        }
+        public override List<string> Ingredients
+        {
+            get
+            {
+                ingreadients = new List<string>();
+                ingreadients.Add("Water");
+                ingreadients.Add("Coffee");
+                return ingreadients;
+            }
+        }
+        public override string  ToString()
+        {
+            if (Decaf)
+            {
+                return $"{size} Decaf Jurassic Java";
+            }
+            else
+            {
+                return $"{size} Jurassic Java";
+            }
         }
     }
 }

@@ -126,6 +126,10 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Mayo = false;
         }
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
+        }
     }
 }
 //Implement a class to represent the T-Rex King Burger entree.  Its price is **$8.45**, it contains **728 calories**, and its ingredients are:

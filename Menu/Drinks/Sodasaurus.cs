@@ -60,9 +60,21 @@ namespace DinoDiner.Menu.Drinks
         {
             Price = 1.50;
             Calories = 112;
-            ingreadients.Add("Water");
-            ingreadients.Add("Natural Flavors");
-            ingreadients.Add("Cane Sugar");
+        }
+        public override List<string> Ingredients
+        {
+            get
+            {
+                ingreadients = new List<string>();
+                ingreadients.Add("Water");
+                ingreadients.Add("Natural Flavors");
+                ingreadients.Add("Cane Sugar");
+                return ingreadients;
+            }
+        }
+        public override string ToString()
+        {
+            return $"{size} {flavor} Sodasaurus";
         }
     }
 }

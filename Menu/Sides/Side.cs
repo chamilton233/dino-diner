@@ -12,7 +12,7 @@ namespace DinoDiner.Menu.Sides
     /// <summary>
     /// abstract class for a side
     /// </summary>
-    public abstract class Side
+    public abstract class Side : IMenuItem
     {
         /// <summary>
         /// makes the protected ingreaddents list
@@ -32,7 +32,7 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public List<string> Ingredients
+        public virtual List<string> Ingredients
         {
             get{
                 return ingreadients;

@@ -65,6 +65,11 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Cheese = false;
         }
+
+        public override string ToString()
+        {
+            return "Veloci-Wrap";
+        }
     }
 }
 //Implement a class to represent the Veloci-Wrap entree.Its price is **$6.86**, it contains **356 calories**, and its ingredients are: a** flour tortilla, chicken breast, romaine lettuce, Ceasar dressing**

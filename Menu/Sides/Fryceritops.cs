@@ -46,9 +46,21 @@ namespace DinoDiner.Menu.Sides
         {
             Price = 0.99;
             Calories = 222;
-            ingreadients.Add("Potato");
-            ingreadients.Add("Salt");
-            ingreadients.Add("Vegetable Oil");
+        }
+        public override List<string> Ingredients
+        {
+            get
+            {
+                ingreadients = new List<string>();
+                ingreadients.Add("Potato");
+                ingreadients.Add("Salt");
+                ingreadients.Add("Vegetable Oil");
+                return ingreadients;
+            }
+        }
+        public override string ToString()
+        {
+            return $"{size} Friceritops";           
         }
     }
 }

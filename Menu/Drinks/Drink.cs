@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Drinks
     /// <summary>
     /// abstract class for all drinks
     /// </summary>
-    public abstract class Drink
+    public abstract class Drink : IMenuItem
     {
         /// <summary>
         /// makes the protected ingreaddents list
@@ -49,5 +49,6 @@ namespace DinoDiner.Menu.Drinks
         /// the size of the drink default small
         /// </summary>
         public virtual Size Size { get; set; } = Size.Small;
+
     }
 }

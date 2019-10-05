@@ -28,7 +28,6 @@ namespace DinoDiner.Menu.Drinks
                 if (value)
                 {
                     sweet = true;
-                    ingreadients.Add("Cane Sugar");
                     switch (size)
                     {
                         case Size.Small:
@@ -46,7 +45,6 @@ namespace DinoDiner.Menu.Drinks
                 else
                 {
                     sweet = false;
-                    ingreadients.Remove("Cane Sugar");
                     switch (size)
                     {
                         case Size.Small:
@@ -76,14 +74,6 @@ namespace DinoDiner.Menu.Drinks
             }
             set {
                 lemon = value;
-                if (lemon)
-                {
-                    ingreadients.Add("Lemon");
-                }
-                else
-                {
-                    ingreadients.Remove("Lemon");
-                }
             }
         }
 
@@ -123,8 +113,7 @@ namespace DinoDiner.Menu.Drinks
         {
             Price = 0.99;
             Calories = 8;
-            ingreadients.Add("Water");
-            ingreadients.Add("Tea");
+
         }
 
         /// <summary>
@@ -134,8 +123,29 @@ namespace DinoDiner.Menu.Drinks
         {
             Lemon = true;
         }
-
-
+        public override List<string> Ingredients
+        {
+            get
+            {
+                ingreadients = new List<string>();
+                ingreadients.Add("Water");
+                ingreadients.Add("Tea");
+                if (sweet) ingreadients.Add("Cane Sugar");
+                if (lemon) ingreadients.Add("Lemon");
+                return ingreadients;
+            }
+        }
+        public override string ToString()
+        {
+            if (sweet)
+            {
+                return $"{size} Sweet Tyrannotea";
+            }
+            else
+            {
+                return $"{size} Tyrannotea";
+            }
+        }
 
     }
 }

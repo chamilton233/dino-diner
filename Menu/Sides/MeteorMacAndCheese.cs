@@ -49,9 +49,21 @@ namespace DinoDiner.Menu.Sides
         {
             Price = 0.99;
             Calories = 420;
-            ingreadients.Add("Macaroni Noodles");
-            ingreadients.Add("Cheese Product");
-            ingreadients.Add("Pork Sausage");
+        }
+        public override List<string> Ingredients
+        {
+            get
+            {
+                ingreadients = new List<string>();
+                ingreadients.Add("Macaroni Noodles");
+                ingreadients.Add("Cheese Product");
+                ingreadients.Add("Pork Sausage");
+                return ingreadients;
+            }
+        }
+        public override string ToString()
+        {
+            return $"{size} Meteor Mac and Cheese";
         }
     }
 }

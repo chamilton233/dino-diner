@@ -49,11 +49,26 @@ namespace DinoDiner.Menu.Sides
         {
             Price = 0.99;
             Calories = 540;
-            ingreadients.Add("Cheese Product");
-            ingreadients.Add("Breading");
-            ingreadients.Add("Vegetable Oil");
+
+        }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+                ingreadients = new List<string>();
+                ingreadients.Add("Cheese Product");
+                ingreadients.Add("Breading");
+                ingreadients.Add("Vegetable Oil");
+                return ingreadients;
+            }
+        }
+        public override string ToString()
+        {
+            return $"{size} Mezzorella Sticks";
         }
     }
+
 
 }
 //Implement a class to represent the MezzorellaSticks Side that inherits from the Side base class.
