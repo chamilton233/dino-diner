@@ -11,16 +11,59 @@
     <WrapPanel>
         <WrapPanel.Resources>
             <Style TargetType="Button">
-                <Setter Property="MinWidth" Value="150"></Setter>
-                <Setter Property="MinHeight" Value="150"></Setter>
+                <Setter Property="MinWidth" Value="140"></Setter>
+                <Setter Property="MinHeight" Value="140"></Setter>
+                <Setter Property="Margin" Value="10"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button>Brontoworst Combo</Button>
-        <Button>Dino-Nuggets Combo</Button>
-        <Button>Prehisotric PB&amp;J Combo</Button>
-        <Button>Pterodactyl Wings Combo</Button>
-        <Button>Steakosaurus Combo</Button>
-        <Button>T-Rex Kingburgur Combo</Button>
-        <Button>Veloci-Wrap Combo</Button>
+        
+        <Button Click="Button_Click" Background="White">
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-01.png"></Image>
+                <TextBlock>Brontoworst Combo</TextBlock> 
+            </StackPanel>
+        </Button>
+
+        <Button Click="Button_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
+            </Button.Background>
+            <TextBlock>Dino-Nuggets Combo</TextBlock>
+        </Button>
+
+        <Button Background="White" Click="Button_Click">
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-03.png"></Image>
+                <TextBlock>Prehisotric PB&amp;J Combo</TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button Background="White" Click="Button_Click">
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-04.png"></Image>
+                <TextBlock>Pterodactyl Wings Combo</TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button Background="White" Click="Button_Click">
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-05.png"></Image>
+                <TextBlock>Steakosaurus Combo</TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button Background="White" Click="Button_Click">
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-06.png"></Image>
+                <TextBlock>T-Rex Kingburgur Combo</TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button Background="White" Click="Button_Click">
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-07.png"></Image>
+                <TextBlock>Veloci-Wrap Combo</TextBlock>
+            </StackPanel>
+        </Button>
     </WrapPanel>
 </Page>
