@@ -50,6 +50,9 @@ namespace DinoDiner.Menu.Sides
             Price = 0.99;
             Calories = 420;
         }
+        /// <summary>
+        /// gets the correct list of ingreadents
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -61,6 +64,10 @@ namespace DinoDiner.Menu.Sides
                 return ingreadients;
             }
         }
+        /// <summary>
+        /// overrides the default to string method
+        /// </summary>
+        /// <returns></returns> a string describing this class
         public override string ToString()
         {
             return $"{size} Meteor Mac and Cheese";

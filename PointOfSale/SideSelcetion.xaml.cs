@@ -16,14 +16,14 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SideSelcetion.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SideSelcetion : Page
     {
         /// <summary>
         /// intializes this page
         /// </summary>
-        public MainWindow()
+        public SideSelcetion()
         {
             InitializeComponent();
         }

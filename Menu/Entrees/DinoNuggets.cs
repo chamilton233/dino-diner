@@ -49,7 +49,10 @@ namespace DinoDiner.Menu.Entrees
             ExtraNuggetCount++;
         }
 
-
+        /// <summary>
+        /// overrides the default to string method
+        /// </summary>
+        /// <returns></returns> a string describing this class
         public override string ToString()
         {
             return "Dino-Nuggets";

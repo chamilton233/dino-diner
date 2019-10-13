@@ -11,7 +11,7 @@
     <WrapPanel>
         <WrapPanel.Resources>
             <Style TargetType="Button">
-                <Setter Property="MinWidth" Value="140"></Setter>
+                <Setter Property="MinWidth" Value="130"></Setter>
                 <Setter Property="MinHeight" Value="140"></Setter>
                 <Setter Property="Margin" Value="10"></Setter>
             </Style>
@@ -24,11 +24,11 @@
             </StackPanel>
         </Button>
 
-        <Button Click="Button_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
-            </Button.Background>
-            <TextBlock>Dino-Nuggets Combo</TextBlock>
+        <Button Click="Button_Click" Background="White">
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-02.png"></Image>
+                <TextBlock>Dino-Nuggets Combo</TextBlock>
+            </StackPanel>
         </Button>
 
         <Button Background="White" Click="Button_Click">

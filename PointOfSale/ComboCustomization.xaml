@@ -10,7 +10,11 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.25*"/>
             <RowDefinition/>
+            <RowDefinition Height="0.25*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -21,14 +25,24 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="1" Grid.Row="0">Side</Button>
-        <Button Grid.Column="4" Grid.Row="0">Drink</Button>
-        <Button Grid.Column="1" Grid.Row="0">Side</Button>
-        <Button Grid.Column="1" Grid.Row="0">Side</Button>
-        <Button Grid.Column="1" Grid.Row="0">Side</Button>
-        <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Grid.ColumnSpan="2" Height="200" Width="240" Content="Large" Grid.Column="4" HorizontalAlignment="Center" Margin="10" Grid.Row="1" VerticalAlignment="Center"/>
-        <RadioButton Style="{StaticResource {x:Type ToggleButton}}"  Grid.ColumnSpan="2" Height="200" Width="240" Content="Large" Grid.Column="0" HorizontalAlignment="Center" Margin="10" Grid.Row="1" VerticalAlignment="Center"/>
-        <RadioButton Style="{StaticResource {x:Type ToggleButton}}"  Grid.ColumnSpan="2" Height="200" Width="240" Content="Large" Grid.Column="2" HorizontalAlignment="Center" Margin="10" Grid.Row="1" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" FontSize="26" HorizontalAlignment="Center">Add to order</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" FontSize="20" HorizontalAlignment="Center">Costomize your combo</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" FontSize="20" HorizontalAlignment="Center">Side</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="4"  FontSize="20" HorizontalAlignment="Center">Drink</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" FontSize="20" HorizontalAlignment="Center">Size</TextBlock>
+        <Button Grid.Column="1" Grid.Row="3" Margin="10" Click="Side_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-08.png"></ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="4" Grid.Row="3" Margin="10" Click="Drink_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-15.png"></ImageBrush>
+            </Button.Background>
+        </Button>
+        <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Grid.ColumnSpan="2"   Content="Large" Grid.Column="4" HorizontalAlignment="Stretch" Margin="10" Grid.Row="5" VerticalAlignment="Stretch"/>
+        <RadioButton Style="{StaticResource {x:Type ToggleButton}}"  Grid.ColumnSpan="2" Content="Small" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10" Grid.Row="5" VerticalAlignment="Stretch"/>
+        <RadioButton Style="{StaticResource {x:Type ToggleButton}}"  Grid.ColumnSpan="2" Content="Medium" Grid.Column="2" HorizontalAlignment="Stretch" Margin="10" Grid.Row="5" VerticalAlignment="Stretch"/>
 
     </Grid>
 </Page>

@@ -18,12 +18,17 @@ namespace DinoDiner.Menu.Entrees
             this.Calories = 318;
             
         }
-
+        /// <summary>
+        /// overrides the default to string method
+        /// </summary>
+        /// <returns></returns> a string describing this class
         public override string ToString()
         {
             return "Pterodactyl Wings";
         }
-
+        /// <summary>
+        /// gets the correct list of ingreadents
+        /// </summary>
         public override List<string> Ingredients
         {
             get

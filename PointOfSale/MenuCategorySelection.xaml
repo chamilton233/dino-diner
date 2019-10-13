@@ -18,8 +18,8 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Button Click ="SelectCombo"  Grid.Column="0" Grid.Row="0">Combos</Button>
-        <Button Grid.Column="1" Grid.Row="0">Entrees</Button>
-        <Button Grid.Column="0" Grid.Row="1">Sides</Button>
-        <Button Grid.Column="1" Grid.Row="1">Drinks</Button>
+        <Button Click="Entrees_Click" Grid.Column="1" Grid.Row="0">Entrees</Button>
+        <Button Click="Side_Click" Grid.Column="0" Grid.Row="1">Sides</Button>
+        <Button Click="Drink_Click" Grid.Column="1" Grid.Row="1">Drinks</Button>
     </Grid>
 </Page>

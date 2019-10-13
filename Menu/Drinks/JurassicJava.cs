@@ -73,6 +73,9 @@ namespace DinoDiner.Menu.Drinks
         {
             RoomForCream = true;
         }
+        /// <summary>
+        /// gets the correct list of ingreadents
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -83,6 +86,10 @@ namespace DinoDiner.Menu.Drinks
                 return ingreadients;
             }
         }
+        /// <summary>
+        /// overrides the default to string method
+        /// </summary>
+        /// <returns></returns> a string describing this class
         public override string  ToString()
         {
             if (Decaf)
