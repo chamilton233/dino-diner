@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
     /// menu item pretty much a peanut butter and jelly sandwitch inherits from entree
     /// </summary>
-    public class PrehistoricPBJ : Entree
+    public class PrehistoricPBJ : Entree , INotifyPropertyChanged
     {
         /// <summary>
         /// if we include the peanut butter
@@ -15,6 +16,13 @@ namespace DinoDiner.Menu.Entrees
         /// if we include the jelly
         /// </summary>
         private bool Jelly = true;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void NotifyParentPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         /// <summary>
         /// gets the correct list of ingreadents
         /// </summary>
@@ -42,6 +50,8 @@ namespace DinoDiner.Menu.Entrees
         public void HoldPeanutButter()
         {
             this.PeanutButter = false;
+            NotifyParentPropertyChanged("Ingredients");
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// holds the jelly
@@ -49,6 +59,8 @@ namespace DinoDiner.Menu.Entrees
         public void HoldJelly()
         {
             this.Jelly = false;
+            NotifyParentPropertyChanged("Ingredients");
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// overrides the default to string method
@@ -57,6 +69,24 @@ namespace DinoDiner.Menu.Entrees
         public override string ToString()
         {
             return "Prehistoric PB&J";
+        }
+
+        public string Description
+        {
+            get {
+                return this.ToString();
+            }
+        }
+
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!PeanutButter) special.Add("Hold Peanut Butter");
+                if (!Jelly) special.Add("Hold Jelly");
+                return special.ToArray();
+            }
         }
     }
 }
