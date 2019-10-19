@@ -12,14 +12,34 @@ namespace DinoDiner.Menu.Drinks
         /// backing of the size 
         /// </summary>
         private Size size;
+
+        private bool roomForCream = false;
+
         /// <summary>
         /// if there is room for cream in the cofee
         /// </summary>
-        public bool RoomForCream = false;
+        public bool RoomForCream {
+            get {
+                return roomForCream;
+            }
+            set {
+                roomForCream = value;
+                NotifyParentPropertyChanged("Special");
+            }
+        }
+
+        private bool decaf = false;
         /// <summary>
         /// if it is decaf or not
         /// </summary>
-        public bool Decaf = false;
+        public bool Decaf {
+            get { return decaf; }
+            set
+            {
+                decaf = value;
+                NotifyParentPropertyChanged("Description");
+            }
+        }
         /// <summary>
         /// how size is changed
         /// </summary>
@@ -43,6 +63,9 @@ namespace DinoDiner.Menu.Drinks
                         Calories = 8;
                         break;
                 }
+                NotifyParentPropertyChanged("Description");
+                NotifyParentPropertyChanged("Calories");
+                NotifyParentPropertyChanged("Price");
             }
             get
             {
@@ -65,6 +88,7 @@ namespace DinoDiner.Menu.Drinks
         public void AddIce()
         {
             Ice = true;
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// leaves room for cream
@@ -72,6 +96,7 @@ namespace DinoDiner.Menu.Drinks
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// gets the correct list of ingreadents
@@ -99,6 +124,25 @@ namespace DinoDiner.Menu.Drinks
             else
             {
                 return $"{size} Jurassic Java";
+            }
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (RoomForCream) special.Add("Leave Room For Cream");
+                if (Ice) special.Add("Add Ice");
+                return special.ToArray();
             }
         }
     }

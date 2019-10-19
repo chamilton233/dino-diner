@@ -117,5 +117,106 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Cane Sugar", soda.Ingredients);
             Assert.Equal<int>(3, soda.Ingredients.Count);
         }
+
+
+        [Fact]
+        public void DescriptionShouldBeCorrect()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.Equal($"{soda.Size} {soda.Flavor} Sodasaurus", soda.Description);
+        }
+
+        [Fact]
+        public void SpecialShouldBeEmptyByDefault()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.Empty(soda.Special);
+        }
+
+        [Fact]
+        public void HoldIceShouldAddToSpecial()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.HoldIce();
+            Assert.Collection<string>(soda.Special, item =>
+            {
+                Assert.Equal("Hold Ice", item);
+            });
+        }
+
+        [Fact]
+        public void ChangingFlavorShouldChangeDescription()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Flavor=SodasaurusFlavor.Chocolate;
+            Assert.Equal($"{soda.Size} Chocolate Sodasaurus", soda.Description);
+            soda.Flavor = SodasaurusFlavor.Cola;
+            Assert.Equal($"{soda.Size} Cola Sodasaurus", soda.Description);
+            soda.Flavor = SodasaurusFlavor.Lime;
+            Assert.Equal($"{soda.Size} Lime Sodasaurus", soda.Description);
+            soda.Flavor = SodasaurusFlavor.Orange;
+            Assert.Equal($"{soda.Size} Orange Sodasaurus", soda.Description);
+            soda.Flavor = SodasaurusFlavor.RootBeer;
+            Assert.Equal($"{soda.Size} RootBeer Sodasaurus", soda.Description);
+            soda.Flavor = SodasaurusFlavor.Vanilla;
+            Assert.Equal($"{soda.Size} Vanilla Sodasaurus", soda.Description);
+            soda.Flavor = SodasaurusFlavor.Cherry;
+            Assert.Equal($"{soda.Size} Cherry Sodasaurus", soda.Description);
+        }
+
+        [Fact]
+        public void ChangingSizeShouldChangeDescription()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Size = Size.Medium;
+            Assert.Equal($"Medium {soda.Flavor} Sodasaurus", soda.Description);
+            soda.Size = Size.Large;
+            Assert.Equal($"Large {soda.Flavor} Sodasaurus", soda.Description);
+            soda.Size = Size.Small;
+            Assert.Equal($"Small {soda.Flavor} Sodasaurus", soda.Description);
+        }
+
+        [Fact]
+        public void HoldIceShouldNotifySpecialChange()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.HoldIce();
+            Assert.PropertyChanged(soda, "Special", () =>
+            {
+                soda.HoldIce();
+            });
+        }
+
+        [Fact]
+        public void ChangingFlavorShouldNotifyDescriptonChange()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Flavor=SodasaurusFlavor.Orange;
+            Assert.PropertyChanged(soda, "Description", () =>
+            {
+                soda.Flavor = SodasaurusFlavor.Orange;
+            });
+        }
+
+
+        [Fact]
+        public void ChangingSizeShouldNotifyDescriptionChange()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Size = Size.Medium;
+            Assert.PropertyChanged(soda, "Description", () =>
+            {
+                soda.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(soda, "Calories", () =>
+            {
+                soda.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(soda, "Price", () =>
+            {
+                soda.Size = Size.Medium;
+            });
+
+        }
     }
 }

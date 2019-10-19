@@ -22,14 +22,6 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         private bool Onions = true;
         /// <summary>
-        /// the price of the item
-        /// </summary>
-        public double Price { get; set; }
-        /// <summary>
-        /// the number of calories it is
-        /// </summary>
-        public uint Calories { get; set; }
-        /// <summary>
         /// gets the correct list of ingreadents
         /// </summary>
         public override List<string> Ingredients
@@ -57,6 +49,8 @@ namespace DinoDiner.Menu.Entrees
         public void HoldBun()
         {
             this.Bun = false;
+            NotifyParentPropertyChanged("Ingredients");
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// holds the peppers
@@ -64,6 +58,8 @@ namespace DinoDiner.Menu.Entrees
         public void HoldPeppers()
         {
             this.Peppers = false;
+            NotifyParentPropertyChanged("Ingredients");
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// holds the onions
@@ -71,6 +67,8 @@ namespace DinoDiner.Menu.Entrees
         public void HoldOnion()
         {
             this.Onions = false;
+            NotifyParentPropertyChanged("Ingredients");
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// overrides the default to string method
@@ -79,6 +77,26 @@ namespace DinoDiner.Menu.Entrees
         public override string ToString()
         {
             return "Brontowurst";
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Bun) special.Add("Hold Whole Wheat Bun");
+                if (!Peppers) special.Add("Hold Peppers");
+                if (!Onions) special.Add("Hold Onion");
+                return special.ToArray();
+            }
         }
     }
 }

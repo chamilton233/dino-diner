@@ -34,6 +34,9 @@ namespace DinoDiner.Menu.Sides
                         Calories = 480;
                         break;
                 }
+                NotifyParentPropertyChanged("Description");
+                NotifyParentPropertyChanged("Calories");
+                NotifyParentPropertyChanged("Price");
             }
             get {
                 return size;
@@ -68,6 +71,23 @@ namespace DinoDiner.Menu.Sides
         public override string ToString()
         {
            return $"{size} Fryceritops";            
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
         }
     }
 }

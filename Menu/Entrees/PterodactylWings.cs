@@ -39,6 +39,23 @@ namespace DinoDiner.Menu.Entrees
                 return ingreadients;
             }
         }
+
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
+        }
     }
 }
 //Implement a class to represent the Pterodactyl Wings entree.

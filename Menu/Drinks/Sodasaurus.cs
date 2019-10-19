@@ -22,7 +22,10 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public SodasaurusFlavor Flavor {
             get { return flavor; }
-            set { flavor = value; }
+            set {
+                flavor = value;
+                NotifyParentPropertyChanged("Description");
+            }
         }
         /// <summary>
         /// how setting size works
@@ -47,6 +50,9 @@ namespace DinoDiner.Menu.Drinks
                         Calories = 208;
                         break;
                 }
+                NotifyParentPropertyChanged("Description");
+                NotifyParentPropertyChanged("Calories");
+                NotifyParentPropertyChanged("Price");
             }
             get
             {
@@ -82,6 +88,24 @@ namespace DinoDiner.Menu.Drinks
         public override string ToString()
         {
             return $"{size} {flavor} Sodasaurus";
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
         }
     }
 }

@@ -1,14 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.ComponentModel;
 namespace DinoDiner.Menu.Drinks
 {
     /// <summary>
     /// abstract class for all drinks
     /// </summary>
-    public abstract class Drink : IMenuItem
+    public abstract class Drink : IMenuItem ,IOrderItem , INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyParentPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         /// <summary>
         /// makes the protected ingreaddents list
         /// </summary>
@@ -44,11 +52,15 @@ namespace DinoDiner.Menu.Drinks
         public virtual void HoldIce()
         {
             Ice = false;
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// the size of the drink default small
         /// </summary>
         public virtual Size Size { get; set; } = Size.Small;
 
+        public abstract string Description { get; }
+
+        public abstract string[] Special { get; }
     }
 }

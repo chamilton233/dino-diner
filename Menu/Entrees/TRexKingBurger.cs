@@ -48,6 +48,10 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
+                ingreadients = new List<string>();
+                ingreadients.Add("Steakburger Pattie");
+                ingreadients.Add("Steakburger Pattie");
+                ingreadients.Add("Steakburger Pattie");
                 if (Bun) ingreadients.Add("Whole Wheat Bun");
                 if (Lettuce) ingreadients.Add("Lettuce");
                 if (Tomato) ingreadients.Add("Tomato");
@@ -55,7 +59,7 @@ namespace DinoDiner.Menu.Entrees
                 if (Pickle) ingreadients.Add("Pickle");
                 if (Ketchup) ingreadients.Add("Ketchup");
                 if (Mustard) ingreadients.Add("Mustard");
-                if (Mayo) ingreadients.Add("Mayo");
+                if (Mayo) ingreadients.Add("Mayonnaise");
                 return ingreadients;
             }
         }
@@ -66,9 +70,6 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 8.45;
             this.Calories = 728;
-            ingreadients.Add("Steakburger Pattie");
-            ingreadients.Add("Steakburger Pattie");
-            ingreadients.Add("Steakburger Pattie");
         }
         /// <summary>
         /// holds the bun
@@ -76,6 +77,8 @@ namespace DinoDiner.Menu.Entrees
         public void HoldBun()
         {
             this.Bun = false;
+            NotifyParentPropertyChanged("Ingredients");
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// holds the lettuce
@@ -83,6 +86,8 @@ namespace DinoDiner.Menu.Entrees
         public void HoldLettuce()
         {
             this.Lettuce = false;
+            NotifyParentPropertyChanged("Ingredients");
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// holds the tomato
@@ -90,6 +95,8 @@ namespace DinoDiner.Menu.Entrees
         public void HoldTomato()
         {
             this.Tomato = false;
+            NotifyParentPropertyChanged("Ingredients");
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// holds the onion
@@ -97,6 +104,8 @@ namespace DinoDiner.Menu.Entrees
         public void HoldOnion()
         {
             this.Onion = false;
+            NotifyParentPropertyChanged("Ingredients");
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// holds the pickle
@@ -104,6 +113,8 @@ namespace DinoDiner.Menu.Entrees
         public void HoldPickle()
         {
             this.Pickle = false;
+            NotifyParentPropertyChanged("Ingredients");
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// holds the ketchup
@@ -111,6 +122,8 @@ namespace DinoDiner.Menu.Entrees
         public void HoldKetchup()
         {
             this.Ketchup = false;
+            NotifyParentPropertyChanged("Ingredients");
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// holds the mustard
@@ -118,6 +131,8 @@ namespace DinoDiner.Menu.Entrees
         public void HoldMustard()
         {
             this.Mustard = false;
+            NotifyParentPropertyChanged("Ingredients");
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// holds the mayo
@@ -125,6 +140,8 @@ namespace DinoDiner.Menu.Entrees
         public void HoldMayo()
         {
             this.Mayo = false;
+            NotifyParentPropertyChanged("Ingredients");
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// overrides the default to string method
@@ -133,6 +150,31 @@ namespace DinoDiner.Menu.Entrees
         public override string ToString()
         {
             return "T-Rex King Burger";
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Bun) special.Add("Hold Whole Wheat Bun");
+                if (!Pickle) special.Add("Hold Pickle");
+                if (!Ketchup) special.Add("Hold Ketchup");
+                if (!Mustard) special.Add("Hold Mustard");
+                if (!Lettuce) special.Add("Hold Lettuce");
+                if (!Tomato) special.Add("Hold Tomato");
+                if (!Onion) special.Add("Hold Onion");
+                if (!Mayo) special.Add("Hold Mayonnaise");
+                return special.ToArray();
+            }
         }
     }
 }

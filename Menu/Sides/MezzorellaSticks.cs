@@ -36,6 +36,9 @@ namespace DinoDiner.Menu.Sides
                         Calories = 720;
                         break;
                 }
+                NotifyParentPropertyChanged("Description");
+                NotifyParentPropertyChanged("Calories");
+                NotifyParentPropertyChanged("Price");
             }
             get
             {
@@ -72,6 +75,23 @@ namespace DinoDiner.Menu.Sides
         public override string ToString()
         {
             return $"{size} Mezzorella Sticks";
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
         }
     }
 

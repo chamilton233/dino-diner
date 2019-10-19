@@ -1,23 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.ComponentModel;
 namespace DinoDiner.Menu.Sides
 {
-    /// <summary>
-    /// enum of size where small=0 and large =2
-    /// </summary>
 
 
     /// <summary>
     /// abstract class for a side
     /// </summary>
-    public abstract class Side : IMenuItem
+    public abstract class Side : IMenuItem , IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// makes the protected ingreaddents list
         /// </summary>
-        protected List<string> ingreadients = new List<string>(); 
+        protected List<string> ingreadients = new List<string>();
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyParentPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// Gets and sets the price
@@ -42,6 +47,10 @@ namespace DinoDiner.Menu.Sides
         /// Gets or sets the size
         /// </summary>
         public virtual Size Size { get; set; }
+
+        public abstract string Description { get; }
+
+        public abstract string[] Special { get; }
 
     }
 }

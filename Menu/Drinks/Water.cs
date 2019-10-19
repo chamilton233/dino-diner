@@ -21,6 +21,7 @@ namespace DinoDiner.Menu.Drinks
             set
             {
                 size = value;
+                NotifyParentPropertyChanged("Description");
             }
             get
             {
@@ -59,6 +60,8 @@ namespace DinoDiner.Menu.Drinks
         public void AddLemon()
         {
             Lemon = true;
+            NotifyParentPropertyChanged("Ingredients");
+            NotifyParentPropertyChanged("Special");
         }
         /// <summary>
         /// overrides the default to string method
@@ -68,5 +71,26 @@ namespace DinoDiner.Menu.Drinks
         {
             return $"{size} Water";
         }
+
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (Lemon) special.Add("Add Lemon");
+                if(!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
+        }
+
+
     }
 }

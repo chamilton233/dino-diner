@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
     /// menu item pretty much a peanut butter and jelly sandwitch inherits from entree
     /// </summary>
-    public class PrehistoricPBJ : Entree , INotifyPropertyChanged
+    public class PrehistoricPBJ : Entree 
     {
         /// <summary>
         /// if we include the peanut butter
@@ -16,12 +15,7 @@ namespace DinoDiner.Menu.Entrees
         /// if we include the jelly
         /// </summary>
         private bool Jelly = true;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void NotifyParentPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        
 
         /// <summary>
         /// gets the correct list of ingreadents
@@ -71,14 +65,14 @@ namespace DinoDiner.Menu.Entrees
             return "Prehistoric PB&J";
         }
 
-        public string Description
+        public override string Description
         {
             get {
                 return this.ToString();
             }
         }
 
-        public string[] Special
+        public override string[] Special
         {
             get
             {
