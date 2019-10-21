@@ -13,9 +13,14 @@ namespace DinoDiner.Menu.Entrees
         /// makes the protected ingreaddents list
         /// </summary>
         protected List<string> ingreadients = new List<string>();
-
+        /// <summary>
+        /// a notfiing thing for an event handler
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
-
+        /// <summary>
+        /// if a property is changed call this it notifys everything
+        /// </summary>
+        /// <param name="propertyName"></param>
         protected void NotifyParentPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -41,9 +46,13 @@ namespace DinoDiner.Menu.Entrees
                 return ingreadients;
             }
         }
-
+        /// <summary>
+        /// the description of this item
+        /// </summary>
         public abstract string Description { get; }
-
+        /// <summary>
+        /// describes all differnt than normal things the item has
+        /// </summary>
         public abstract string[] Special { get; }
     }
 }

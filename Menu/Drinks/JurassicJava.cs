@@ -12,7 +12,9 @@ namespace DinoDiner.Menu.Drinks
         /// backing of the size 
         /// </summary>
         private Size size;
-
+        /// <summary>
+        /// if there is room for cream in the drink or not
+        /// </summary>
         private bool roomForCream = false;
 
         /// <summary>
@@ -27,7 +29,9 @@ namespace DinoDiner.Menu.Drinks
                 NotifyParentPropertyChanged("Special");
             }
         }
-
+        /// <summary>
+        /// if the drink is decaf or not
+        /// </summary>
         private bool decaf = false;
         /// <summary>
         /// if it is decaf or not
@@ -126,7 +130,9 @@ namespace DinoDiner.Menu.Drinks
                 return $"{size} Jurassic Java";
             }
         }
-
+        /// <summary>
+        /// the description of this item
+        /// </summary>
         public override string Description
         {
             get
@@ -134,7 +140,9 @@ namespace DinoDiner.Menu.Drinks
                 return this.ToString();
             }
         }
-
+        /// <summary>
+        /// describes all differnt than normal things the item has
+        /// </summary>
         public override string[] Special
         {
             get

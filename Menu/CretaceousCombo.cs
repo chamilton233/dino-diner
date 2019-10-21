@@ -7,14 +7,30 @@ using DinoDiner.Menu.Drinks;
 using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo : IMenuItem , INotifyPropertyChanged
+    /// <summary>
+    /// the class for a combo of a entree side and drink
+    /// </summary>
+    public class CretaceousCombo : IMenuItem , INotifyPropertyChanged , IOrderItem
     {
+        /// <summary>
+        /// an notifing event handler
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// notifyies all things about a property changing
+        /// </summary>
+        /// <param name="propertyName"></param>
         protected void NotifyParentPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        /// <summary>
+        /// the entree
+        /// </summary>
         private Entree entree;
+        /// <summary>
+        /// property the entree
+        /// </summary>
         public Entree Entree {
             get
             {
@@ -30,8 +46,13 @@ namespace DinoDiner.Menu
             }
         }
         //public Entree Entree { get; protected set; }
-
+        /// <summary>
+        /// the side
+        /// </summary>
         private Side side;
+        /// <summary>
+        /// property the side
+        /// </summary>
         public Side Side {
             get { return side; }
             set {
@@ -43,7 +64,13 @@ namespace DinoDiner.Menu
                 NotifyParentPropertyChanged("Calories");
             }
         }
+        /// <summary>
+        /// the drink with the combo
+        /// </summary>
         private Drink drink;
+        /// <summary>
+        /// property of the drink with the combo
+        /// </summary>
         public Drink Drink {
             get { return drink; }
             set
@@ -56,7 +83,9 @@ namespace DinoDiner.Menu
                 NotifyParentPropertyChanged("Calories");
             }
         }
-
+        /// <summary>
+        /// gets the price
+        /// </summary>
         public double Price
         {
             get
@@ -64,7 +93,9 @@ namespace DinoDiner.Menu
                 return Entree.Price + Side.Price + Drink.Price - 0.25;
             }
         }
-
+        /// <summary>
+        /// gets the calories
+        /// </summary>
         public uint Calories
         {
             get
@@ -72,7 +103,13 @@ namespace DinoDiner.Menu
                 return Entree.Calories + Side.Calories + Drink.Calories;
             }
         }
+        /// <summary>
+        /// sets the size of everything
+        /// </summary>
         private Size size = Size.Small;
+        /// <summary>
+        /// sets the size of everything
+        /// </summary>
         public Size Size
         {
             get {
@@ -88,7 +125,9 @@ namespace DinoDiner.Menu
                 NotifyParentPropertyChanged("Calories");
             }
         }
-
+        /// <summary>
+        /// the ingeridients
+        /// </summary>
         public List<string> Ingredients
         {
             get {
@@ -99,18 +138,27 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// sets basic info about this object
+        /// </summary>
+        /// <param name="entree"></param>
         public CretaceousCombo(Entree entree)
         {
             Entree = entree;
             Side = new Fryceritops();
             Drink = new Sodasaurus();
         }
+        /// <summary>
+        /// the name of this combo
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return Entree.ToString() + " Combo";
         }
-
+        /// <summary>
+        /// the description of this item
+        /// </summary>
         public string Description
         {
             get
@@ -118,7 +166,9 @@ namespace DinoDiner.Menu
                 return this.ToString();
             }
         }
-
+        /// <summary>
+        /// describes all differnt than normal things the item has
+        /// </summary>
         public string[] Special
         {
             get

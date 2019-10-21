@@ -80,7 +80,9 @@ namespace DinoDiner.Menu.Entrees
         {
             return "Veloci-Wrap";
         }
-
+        /// <summary>
+        /// the description of this item
+        /// </summary>
         public override string Description
         {
             get
@@ -88,7 +90,9 @@ namespace DinoDiner.Menu.Entrees
                 return this.ToString();
             }
         }
-
+        /// <summary>
+        /// describes all differnt than normal things the item has
+        /// </summary>
         public override string[] Special
         {
             get

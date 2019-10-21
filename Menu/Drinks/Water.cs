@@ -71,7 +71,9 @@ namespace DinoDiner.Menu.Drinks
         {
             return $"{size} Water";
         }
-
+        /// <summary>
+        /// the description of this item
+        /// </summary>
         public override string Description
         {
             get
@@ -79,7 +81,9 @@ namespace DinoDiner.Menu.Drinks
                 return this.ToString();
             }
         }
-
+        /// <summary>
+        /// describes all differnt than normal things the item has
+        /// </summary>
         public override string[] Special
         {
             get
