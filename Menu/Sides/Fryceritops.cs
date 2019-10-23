@@ -34,6 +34,7 @@ namespace DinoDiner.Menu.Sides
                         Calories = 480;
                         break;
                 }
+                NotifyParentPropertyChanged("Size");
                 NotifyParentPropertyChanged("Description");
                 NotifyParentPropertyChanged("Calories");
                 NotifyParentPropertyChanged("Price");

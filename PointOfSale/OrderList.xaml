@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock Text="Order" FontWeight="Bold" TextAlignment="Right"></TextBlock>
         <TextBlock Text="#" FontWeight="Bold"  Grid.Column="1" Margin="5,0,0,0"></TextBlock>
-        <ListBox Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Items}">
+        <ListBox Grid.Row="1" Grid.ColumnSpan="2" SelectionChanged="OnSelectionChanged" ItemsSource="{Binding Path=Items , UpdateSourceTrigger=PropertyChanged}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

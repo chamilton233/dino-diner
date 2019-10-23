@@ -24,5 +24,9 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        }
     }
 }
