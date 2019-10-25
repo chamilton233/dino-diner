@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Name="Window">
     <DockPanel>
-        <local:OrderList DockPanel.Dock="Right" Width="200">
+        <local:OrderList DockPanel.Dock="Right" Width="200" x:Name="Orderl">
             
         </local:OrderList>
-        <Frame Source="MenuCategorySelection.xaml" Name="MenuCategorySelection" 
+        <Frame Source="MenuCategorySelection.xaml" x:Name="MenuCategorySelection" 
                LoadCompleted="OnLoadCompleted" DataContextChanged="OnDataContextChanged"></Frame>
     </DockPanel>
 </Window>

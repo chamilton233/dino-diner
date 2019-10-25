@@ -34,9 +34,9 @@
         <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" FontSize="20">Side</TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" FontSize="20">Size</TextBlock>
         <Button Grid.Row="2" Margin="10" Grid.RowSpan="3" Click="Fry_click">Fryceritops</Button>
-        <Button Grid.Row="5" Margin="10" Grid.RowSpan="3">Meteor Mac and Cheese</Button>
-        <Button Grid.Row="8" Margin="10" Grid.RowSpan="3">Mezzorella Sticks</Button>
-        <Button Grid.Row="11" Margin="10" Grid.RowSpan="3">Triceritots</Button>
+        <Button Grid.Row="5" Margin="10" Grid.RowSpan="3" Click="Metor_Click">Meteor Mac and Cheese</Button>
+        <Button Grid.Row="8" Margin="10" Grid.RowSpan="3" Click="Button_Click_1">Mezzorella Sticks</Button>
+        <Button Grid.Row="11" Margin="10" Grid.RowSpan="3" Click="Button_Click_2">Triceritots</Button>
         <RadioButton Style="{StaticResource {x:Type ToggleButton}}"  Tag ="Large" Click="OnChangeSize" Grid.RowSpan="4"  Content="Large" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10" Grid.Row="10" VerticalAlignment="Stretch"/>
         <RadioButton Style="{StaticResource {x:Type ToggleButton}}"  Tag ="Small" Click="OnChangeSize" Grid.RowSpan="4" Content="Small" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10" Grid.Row="2" VerticalAlignment="Stretch"/>
         <RadioButton Style="{StaticResource {x:Type ToggleButton}}"  Tag ="Medium" Click="OnChangeSize" Grid.RowSpan="4" Content="Medium" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10" Grid.Row="6" VerticalAlignment="Stretch"/>

@@ -20,18 +20,27 @@
         </Grid.ColumnDefinitions>
         <TextBlock Text="Order" FontWeight="Bold" TextAlignment="Right"></TextBlock>
         <TextBlock Text="#" FontWeight="Bold"  Grid.Column="1" Margin="5,0,0,0"></TextBlock>
-        <ListBox Grid.Row="1" Grid.ColumnSpan="2" SelectionChanged="OnSelectionChanged" ItemsSource="{Binding Path=Items , UpdateSourceTrigger=PropertyChanged}">
+        <ListBox Grid.Row="1" Grid.ColumnSpan="2" SelectionChanged="OnSelectionChanged" ItemsSource="{Binding Path=Items , UpdateSourceTrigger=PropertyChanged}"
+                 IsSynchronizedWithCurrentItem="True" Name="OrderItems">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Path=Description}"/>
+                    <StackPanel Width="180">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="15"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Path=Description}"/>
+                            <Button Click="Remove_Click" Background="Red" Foreground="White" Grid.Column="1">X</Button>
+                        </Grid>
+
                         <ListBox ItemsSource="{Binding Path=Special}" BorderBrush="White"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <TextBlock Text="Subtotal" FontWeight="Bold" TextAlignment="Right" Grid.Row="2"></TextBlock>
-        <TextBlock Text="{Binding Path=SubtotalCost}"  Grid.Row="2" FontWeight="Bold" Grid.Column="1"></TextBlock>
+        <TextBlock Text="{Binding Path=SubTotalCost}"  Grid.Row="2" FontWeight="Bold" Grid.Column="1"></TextBlock>
         <Button Grid.Row="3">Cancel</Button>
         <Button Grid.Row="3" Grid.Column="2">Pay</Button>
     </Grid>

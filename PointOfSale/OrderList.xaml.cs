@@ -12,7 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using DinoDiner.Menu;
+using DinoDiner.Menu.Sides;
 namespace PointOfSale
 {
     /// <summary>
@@ -20,6 +21,7 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderList : UserControl
     {
+        public NavigationService NavigationService { get; set; }
         public OrderList()
         {
             InitializeComponent();
@@ -27,6 +29,24 @@ namespace PointOfSale
 
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (OrderItems.SelectedItem is Side side)
+            {
+                NavigationService.Navigate(new SideSelcetion(side));
+            }
+        }
+
+        private void Remove_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                if (sender is FrameworkElement frame)
+                {
+                    if (frame.DataContext is IOrderItem item)
+                    {
+                        order.Remove(item);
+                    }
+                }
+            }
         }
     }
 }

@@ -31,9 +31,9 @@ namespace PointOfSale
         {
             InitializeComponent();
             Order o = new Order();
-            o.Items.Add(new Fryceritops());
             DataContext = o;
-
+            MenuCategorySelection.Navigate(new MenuCategorySelection());
+            Orderl.NavigationService  = MenuCategorySelection.NavigationService;
         }
 
         private void PassDataContentToPage()

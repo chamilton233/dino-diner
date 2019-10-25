@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Collections.ObjectModel;
-
+using System.ComponentModel;
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// interface of an order item
     /// </summary>
-    public interface IOrderItem
+    public interface IOrderItem : INotifyPropertyChanged
     {
         /// <summary>
         /// teh price of the item
