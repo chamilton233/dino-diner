@@ -54,17 +54,31 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="BrontowerstCostomize.xaml.cs">
+      <DependentUpon>BrontowerstCostomize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CostomizePBJ.xaml.cs">
+      <DependentUpon>CostomizePBJ.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OrderList.xaml.cs">
       <DependentUpon>OrderList.xaml</DependentUpon>
     </Compile>
     <Compile Include="SideSelcetion.xaml.cs">
       <DependentUpon>SideSelcetion.xaml</DependentUpon>
     </Compile>
+    <Page Include="BrontowerstCostomize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ComboCustomization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ComboSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CostomizePBJ.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

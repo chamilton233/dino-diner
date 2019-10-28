@@ -30,6 +30,7 @@ namespace PointOfSale
         public DrinkSelection()
         {
             InitializeComponent();
+            drink = new Water();
         }
         /// <summary>
         /// constuctor that taken in a drink for a parameter 

@@ -41,7 +41,6 @@ namespace PointOfSale
             if (OrderItems.SelectedItem is Drink drink)
             {
                 NavigationService.Navigate(new DrinkSelection(drink));
-
             }
         }
         /// <summary>
@@ -61,6 +60,6 @@ namespace PointOfSale
                     }
                 }
             }
-        }
+        }        
     }
 }

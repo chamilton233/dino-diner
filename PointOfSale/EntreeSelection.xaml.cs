@@ -39,9 +39,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new Brontowurst();
+                Brontowurst entree = new Brontowurst();
                 order.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.Navigate(new BrontowerstCostomize(entree,false));
 
             }
         }
@@ -69,10 +69,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new PrehistoricPBJ();
+                PrehistoricPBJ entree = new PrehistoricPBJ();
                 order.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
-
+                NavigationService.Navigate(new CostomizePBJ(entree, false));
             }
         }
         /// <summary>

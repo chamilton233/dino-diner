@@ -10,6 +10,15 @@
         <local:OrderList DockPanel.Dock="Right" Width="250" x:Name="Orderl">
             
         </local:OrderList>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Click="OnReturnToSelction_Click">Return To Catagory Selection</Button>
+        </Grid>
+
         <Frame Source="MenuCategorySelection.xaml" x:Name="MenuCategorySelection" 
                LoadCompleted="OnLoadCompleted" DataContextChanged="OnDataContextChanged"></Frame>
     </DockPanel>
