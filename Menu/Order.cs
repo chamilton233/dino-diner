@@ -122,7 +122,10 @@ namespace DinoDiner.Menu
 
         public bool Remove(IOrderItem item)
         {
-            return items.Remove(item);
+            bool b=items.Remove(item);
+            OnCollectionChanged(this, new EventArgs());
+            return b;
+
         }
 
         public void OnCollectionChanged(object sender, EventArgs args)

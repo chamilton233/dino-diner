@@ -18,29 +18,29 @@
                 </Style>
             </WrapPanel.Resources>
 
-            <Button  Background="White">Cherry</Button>
+            <Button  Background="White" Tag="Cherry" Click="Falvor_Click">Cherry</Button>
 
-            <Button  Background="White">
+            <Button  Background="White" Tag="Chocolate" Click="Falvor_Click">
                 Chocolate
             </Button>
 
-            <Button Background="White" >
+            <Button Background="White" Tag="Cola" Click="Falvor_Click" >
                 Cola
             </Button>
 
-            <Button Background="White">
+            <Button Background="White" Tag="Lime" Click="Falvor_Click">
                 Lime
             </Button>
 
-            <Button Background="White">
+            <Button Background="White" Tag="Orange" Click="Falvor_Click">
                 Orange
             </Button>
 
-            <Button Background="White" >
+            <Button Background="White" Tag="RootBeer" Click="Falvor_Click">
                 Root Beer
             </Button>
 
-            <Button Background="White" >
+            <Button Background="White" Tag="Vanilla" Click="Falvor_Click">
                 Vanilla
             </Button>
         </WrapPanel>

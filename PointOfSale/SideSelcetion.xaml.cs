@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu;
 using DinoDiner.Menu.Sides;
-using DDSize =DinoDiner.Menu.Size ;
+using DDSize =DinoDiner.Menu.Size;
 
 
 namespace PointOfSale
@@ -25,8 +25,14 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelcetion : Page
     {
+        /// <summary>
+        /// the side currently being worked on
+        /// </summary>
         private Side side;
-
+        /// <summary>
+        /// a constuctor where you pass in the side and set the starting one
+        /// </summary>
+        /// <param name="side"></param>
         public SideSelcetion(Side side)
         {
             InitializeComponent();
@@ -40,7 +46,11 @@ namespace PointOfSale
             InitializeComponent();
             side = new Fryceritops();
         }
-
+        /// <summary>
+        /// functionality for adding the given thing to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Fry_click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -49,15 +59,24 @@ namespace PointOfSale
                 order.Add(side);
             }
         }
-
+        /// <summary>
+        /// functionality for switching the size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnChangeSize(object sender, RoutedEventArgs e)
         {
             if (sender is FrameworkElement element)
             {
-                side.Size =(DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString()); 
+                side.Size =(DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
-
+        /// <summary>
+        /// functionality for adding the given thing to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Metor_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -66,21 +85,29 @@ namespace PointOfSale
                 order.Add(side);
             }
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Mezzor_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
             {
-                side = new Fryceritops();
+                side = new MezzorellaSticks();
                 order.Add(side);
             }
         }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// functionality for adding the given thing to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Tots_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
             {
-                side = new Fryceritops();
+                side = new Triceritots();
                 order.Add(side);
             }
         }

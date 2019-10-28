@@ -31,7 +31,17 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// backing for the lemon 
         /// </summary>
-        public bool Lemon = false;
+        private bool lemon = false;
+
+        public bool Lemon
+        {
+            get { return lemon; }
+            set {
+                lemon = value;
+                NotifyParentPropertyChanged("Ingredients");
+                NotifyParentPropertyChanged("Special");
+            }
+        }
         /// <summary>
         /// the consturtor gives default info
         /// </summary>
@@ -50,7 +60,7 @@ namespace DinoDiner.Menu.Drinks
             {
                 ingreadients = new List<string>();
                 ingreadients.Add("Water");
-                if (Lemon) ingreadients.Add("Lemon");
+                if (lemon) ingreadients.Add("Lemon");
                 return ingreadients;
             }
         }
@@ -59,7 +69,7 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public void AddLemon()
         {
-            Lemon = true;
+            lemon = true;
             NotifyParentPropertyChanged("Ingredients");
             NotifyParentPropertyChanged("Special");
         }
@@ -89,7 +99,7 @@ namespace DinoDiner.Menu.Drinks
             get
             {
                 List<string> special = new List<string>();
-                if (Lemon) special.Add("Add Lemon");
+                if (lemon) special.Add("Add Lemon");
                 if(!Ice) special.Add("Hold Ice");
                 return special.ToArray();
             }

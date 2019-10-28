@@ -26,10 +26,21 @@ namespace DinoDiner.Menu.Drinks
         /// makes the protected ingreaddents list
         /// </summary>
         protected List<string> ingreadients = new List<string>();
+
+        private bool ice = true;
         /// <summary>
         /// if there is ice or not default true
         /// </summary>
-        public bool Ice { get; set; } = true;
+        public bool Ice {
+            get
+            {
+                return ice;
+            }
+            set {
+                ice = value;
+                NotifyParentPropertyChanged("Special");
+            }
+        }
 
         /// <summary>
         /// Gets and sets the price

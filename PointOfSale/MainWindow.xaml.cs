@@ -35,7 +35,9 @@ namespace PointOfSale
             MenuCategorySelection.Navigate(new MenuCategorySelection());
             Orderl.NavigationService  = MenuCategorySelection.NavigationService;
         }
-
+        /// <summary>
+        /// passes the data content along
+        /// </summary>
         private void PassDataContentToPage()
         {
             if (MenuCategorySelection.Content is FrameworkElement page)
@@ -43,12 +45,21 @@ namespace PointOfSale
                 page.DataContext = MenuCategorySelection.DataContext;
             }
         }
-
+        /// <summary>
+        /// functionality for load compleating
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnLoadCompleted(object sender, NavigationEventArgs e)
         {
             PassDataContentToPage();
         }
 
+        /// <summary>
+        /// functionality for the data content changing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {

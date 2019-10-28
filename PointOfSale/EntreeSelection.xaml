@@ -18,49 +18,49 @@
                 </Style>
             </WrapPanel.Resources>
 
-            <Button  Background="White">
+            <Button Click="Bronto_Click" Background="White">
                 <StackPanel>
                     <Image Width="100" Source="Assets/DinoDiner-01.png"></Image>
                     <TextBlock TextAlignment="Center">Brontoworst</TextBlock>
                 </StackPanel>
             </Button>
 
-            <Button Background="White">
+            <Button Click="Dino_Click" Background="White">
                 <StackPanel>
-                    <Image Width="100" Source="Assets/DinoDiner-03.png"></Image>
+                    <Image Width="100" Source="Assets/DinoDiner-02.png"></Image>
                     <TextBlock TextAlignment="Center">Dino-Nuggets</TextBlock>
                 </StackPanel>
             </Button>
 
-            <Button Background="White" >
+            <Button Click="Prehis_Click" Background="White" >
                 <StackPanel>
                     <Image Width="100" Source="Assets/DinoDiner-03.png"></Image>
                     <TextBlock TextAlignment="Center">Prehisotric PB&amp;J</TextBlock>
                 </StackPanel>
             </Button>
 
-            <Button Background="White" >
+            <Button Click="Wings_Click" Background="White" >
                 <StackPanel>
                     <Image Width="100" Source="Assets/DinoDiner-04.png"></Image>
                     <TextBlock TextAlignment="Center">Pterodactyl Wings</TextBlock>
                 </StackPanel>
             </Button>
 
-            <Button Background="White" >
+            <Button  Click="Steak_Click" Background="White" >
                 <StackPanel>
                     <Image Width="100" Source="Assets/DinoDiner-05.png"></Image>
                     <TextBlock>Steakosaurus burgur</TextBlock>
                 </StackPanel>
             </Button>
 
-            <Button Background="White" >
+            <Button Click="Trex_Click" Background="White" >
                 <StackPanel>
                     <Image Width="100" Source="Assets/DinoDiner-06.png"></Image>
                     <TextBlock TextAlignment="Center">T-Rex Kingburgur</TextBlock>
                 </StackPanel>
             </Button>
 
-            <Button Background="White">
+            <Button Click="Veloci_Click" Background="White">
                 <StackPanel>
                     <Image Width="100" Source="Assets/DinoDiner-07.png"></Image>
                     <TextBlock TextAlignment="Center">Veloci-Wrap</TextBlock>

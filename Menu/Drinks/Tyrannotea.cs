@@ -78,6 +78,8 @@ namespace DinoDiner.Menu.Drinks
             }
             set {
                 lemon = value;
+                NotifyParentPropertyChanged("Ingredients");
+                NotifyParentPropertyChanged("Special");
             }
         }
 

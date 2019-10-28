@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu;
 using DinoDiner.Menu.Sides;
+using DinoDiner.Menu.Drinks;
 namespace PointOfSale
 {
     /// <summary>
@@ -26,15 +27,28 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// functionality for switching to the right page for a selection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (OrderItems.SelectedItem is Side side)
             {
                 NavigationService.Navigate(new SideSelcetion(side));
             }
-        }
+            if (OrderItems.SelectedItem is Drink drink)
+            {
+                NavigationService.Navigate(new DrinkSelection(drink));
 
+            }
+        }
+        /// <summary>
+        /// how to remove an item from the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Remove_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)

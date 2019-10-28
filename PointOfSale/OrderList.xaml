@@ -24,7 +24,7 @@
                  IsSynchronizedWithCurrentItem="True" Name="OrderItems">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Width="180">
+                    <StackPanel Width="230">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
