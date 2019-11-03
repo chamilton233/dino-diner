@@ -23,7 +23,18 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
+        /// <summary>
+        /// the drink to be manipulated
+        /// </summary>
         private Drink drink;
+        /// <summary>
+        /// if it is part of a combo
+        /// </summary>
+        private bool combo = false;
+        /// <summary>
+        /// the combo this may be a part of
+        /// </summary>
+        private CretaceousCombo Cretaceous;
         /// <summary>
         /// intializes this page
         /// </summary>
@@ -62,6 +73,37 @@ namespace PointOfSale
             }
         }
         /// <summary>
+        /// its the constuctor in case this is a part of a combo
+        /// </summary>
+        /// <param name="drnk"></param>
+        public DrinkSelection(CretaceousCombo drnk)
+        {
+            InitializeComponent();
+            Cretaceous = drnk;
+            drink = Cretaceous.Drink;
+            combo = true;
+            if (drink is Sodasaurus soda)
+            {
+                S_D_F.IsEnabled = true;
+                L_LRFC.IsEnabled = false;
+            }
+            if (drink is Tyrannotea tyrannotea)
+            {
+                S_D_F.IsEnabled = true;
+                L_LRFC.IsEnabled = true;
+            }
+            if (drink is JurassicJava java)
+            {
+                S_D_F.IsEnabled = true;
+                L_LRFC.IsEnabled = true;
+            }
+            if (drink is Water wa)
+            {
+                S_D_F.IsEnabled = false;
+                L_LRFC.IsEnabled = true;
+            }
+        }
+        /// <summary>
         /// what happens when flavor is clicked
         /// or decaf or sweet
         /// </summary>
@@ -71,7 +113,14 @@ namespace PointOfSale
         {
             if (drink is Sodasaurus soda)
             {
-                NavigationService.Navigate(new FlavorSelection(soda));
+                if (!combo)
+                {
+                    NavigationService.Navigate(new FlavorSelection(soda));
+                }
+                else
+                {
+                    NavigationService.Navigate(new FlavorSelection(Cretaceous));
+                }
             }
             if (drink is Tyrannotea tyrannotea)
             {
@@ -95,6 +144,10 @@ namespace PointOfSale
                     java.Decaf = true;
                 }
             }
+            if (combo)
+            {
+                Cretaceous.Drink = drink;
+            }
         }
         /// <summary>
         /// functionality for adding the given thing to the order
@@ -106,7 +159,14 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 drink = new Water();
-                order.Add(drink);
+                if (!combo)
+                {
+                    order.Add(drink);
+                }
+                else
+                {
+                    Cretaceous.Drink = drink;
+                }
                 S_D_F.IsEnabled = false;
                 L_LRFC.IsEnabled = true;
             }
@@ -121,7 +181,14 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 drink = new Sodasaurus();
-                order.Add(drink);
+                if (!combo)
+                {
+                    order.Add(drink);
+                }
+                else
+                {
+                    Cretaceous.Drink = drink;
+                }
                 L_LRFC.IsEnabled = false;
                 S_D_F.IsEnabled = true;
             }
@@ -136,7 +203,14 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 drink = new JurassicJava();
-                order.Add(drink);
+                if (!combo)
+                {
+                    order.Add(drink);
+                }
+                else
+                {
+                    Cretaceous.Drink = drink;
+                }
                 S_D_F.IsEnabled = true;
                 L_LRFC.IsEnabled = true;
 
@@ -152,7 +226,14 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 drink = new Tyrannotea();
-                order.Add(drink);
+                if (!combo)
+                {
+                    order.Add(drink);
+                }
+                else
+                {
+                    Cretaceous.Drink = drink;
+                }
                 S_D_F.IsEnabled = true;
                 L_LRFC.IsEnabled = true;
             }
@@ -167,7 +248,12 @@ namespace PointOfSale
             if (sender is FrameworkElement element)
             {
                 drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+                if (combo)
+                {
+                    Cretaceous.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+                }
             }
+
         }
 
         /// <summary>
@@ -210,6 +296,10 @@ namespace PointOfSale
                     tea.Lemon = true;
                 }
             }
+            if (combo)
+            {
+                Cretaceous.Drink = drink;
+            }
         }
         /// <summary>
         /// functionality for toggling if there is ice or not
@@ -225,6 +315,10 @@ namespace PointOfSale
             else {
                 drink.Ice = true;
             }
+            if (combo)
+            {
+                Cretaceous.Drink = drink;
+            }
         }
         /// <summary>
         /// finishes the drink
@@ -233,7 +327,15 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void Done_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new MenuCategorySelection());
+            if (!combo)
+            {
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
+            else
+            {
+                NavigationService.Navigate(new ComboCustomization(Cretaceous));
+
+            }
         }
 
     }

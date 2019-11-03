@@ -58,17 +58,29 @@
     <Compile Include="BrontowerstCostomize.xaml.cs">
       <DependentUpon>BrontowerstCostomize.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CostmizeTrex.xaml.cs">
+      <DependentUpon>CostmizeTrex.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CostomizeDinoNuggets.xaml.cs">
       <DependentUpon>CostomizeDinoNuggets.xaml</DependentUpon>
     </Compile>
     <Compile Include="CostomizePBJ.xaml.cs">
       <DependentUpon>CostomizePBJ.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CostomizeVelociWrap.xaml.cs">
+      <DependentUpon>CostomizeVelociWrap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CostomizeWings.xaml.cs">
+      <DependentUpon>CostomizeWings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OrderList.xaml.cs">
       <DependentUpon>OrderList.xaml</DependentUpon>
     </Compile>
     <Compile Include="SideSelcetion.xaml.cs">
       <DependentUpon>SideSelcetion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CostomizeSteak.xaml.cs">
+      <DependentUpon>CostomizeSteak.xaml</DependentUpon>
     </Compile>
     <Page Include="BrontowerstCostomize.xaml">
       <SubType>Designer</SubType>
@@ -82,11 +94,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CostmizeTrex.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CostomizeDinoNuggets.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CostomizePBJ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CostomizeVelociWrap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CostomizeWings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,6 +162,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SideSelcetion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CostomizeSteak.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

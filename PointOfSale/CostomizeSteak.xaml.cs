@@ -14,63 +14,46 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu.Entrees;
 using DinoDiner.Menu;
+
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for BrontowerstCostomize.xaml
+    /// Interaction logic for CostomizeSteak.xaml
     /// </summary>
-    public partial class BrontowerstCostomize : Page
+    public partial class CostomizeSteak : Page
     {
         /// <summary>
-        /// the brotowerst to be manipulated
+        /// the buger to be manipulated
         /// </summary>
-        Brontowurst bronto;
+        private SteakosaurusBurger Burger;
         /// <summary>
-        /// if it is part of a combo
+        /// if it is a part of a combo
         /// </summary>
-        bool combo;
+        private bool combo;
         /// <summary>
-        /// the combo it might be part of 
+        /// the combo that it might be a part of 
         /// </summary>
-        CretaceousCombo Cretaceous; 
+        private CretaceousCombo Cretaceous;
         /// <summary>
-        /// constuctor if not combo
+        /// the contsuctior without a combo
         /// </summary>
-        /// <param name="brontowurst"></param>
-        public BrontowerstCostomize(Brontowurst brontowurst)
+        /// <param name="steakosaurus"></param>
+        public CostomizeSteak(SteakosaurusBurger steakosaurus)
         {
             InitializeComponent();
-            bronto = brontowurst;
-            combo = false;
+            Burger = steakosaurus;
+            combo =false;
         }
         /// <summary>
-        /// constuctor if combo
+        /// the contsuctior with a combo
         /// </summary>
-        /// <param name="brontowurst"></param>
-        public BrontowerstCostomize(CretaceousCombo brontowurst)
+        /// <param name="steakosaurus"></param>
+        public CostomizeSteak(CretaceousCombo steakosaurus)
         {
             InitializeComponent();
-            Cretaceous = brontowurst;
-            bronto = (Brontowurst)brontowurst.Entree;
-            combo = true; 
-        }
-        /// <summary>
-        /// holds onions
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void HoldOnions_Click(object sender, RoutedEventArgs e)
-        {
-            bronto.HoldOnion();
-        }
-        /// <summary>
-        /// holds peppers
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void HoldPeppers_Click(object sender, RoutedEventArgs e)
-        {
-            bronto.HoldPeppers();
+            Cretaceous = steakosaurus;
+            Burger =(SteakosaurusBurger) steakosaurus.Entree;
+            combo = true;
         }
         /// <summary>
         /// holds bun
@@ -79,10 +62,37 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void HoldBun_Click(object sender, RoutedEventArgs e)
         {
-            bronto.HoldBun();
+            Burger.HoldBun();
         }
         /// <summary>
-        /// functionality for navigating away from this page
+        /// holds mustard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void HoldMustard_Click(object sender, RoutedEventArgs e)
+        {
+            Burger.HoldMustard();
+        }
+        /// <summary>
+        /// holds ketchup
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void HoldKetchup_Click(object sender, RoutedEventArgs e)
+        {
+            Burger.HoldKetchup();
+        }
+        /// <summary>
+        /// holds pickle
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void HoldPickle_Click(object sender, RoutedEventArgs e)
+        {
+            Burger.HoldPickle();
+        }
+        /// <summary>
+        /// done functionality
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

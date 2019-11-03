@@ -17,6 +17,7 @@ using DinoDiner.Menu.Sides;
 using DDSize =DinoDiner.Menu.Size;
 
 
+
 namespace PointOfSale
 {
 
@@ -29,6 +30,14 @@ namespace PointOfSale
         /// the side currently being worked on
         /// </summary>
         private Side side;
+        /// <summary>
+        /// a combo in case this is part of a combo
+        /// </summary>
+        private CretaceousCombo Cretaceous;
+        /// <summary>
+        /// if it is part of a combo
+        /// </summary>
+        private bool combo =false;
         /// <summary>
         /// a constuctor where you pass in the side and set the starting one
         /// </summary>
@@ -46,6 +55,14 @@ namespace PointOfSale
             InitializeComponent();
             side = new Fryceritops();
         }
+
+        public SideSelcetion(CretaceousCombo cretaceousCombo)
+        {
+            InitializeComponent();
+            combo = true;
+            side = cretaceousCombo.Side;
+            Cretaceous = cretaceousCombo;
+        }
         /// <summary>
         /// functionality for adding the given thing to the order
         /// </summary>
@@ -56,7 +73,13 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new Fryceritops();
-                order.Add(side);
+                if (combo != true)
+                {
+                    order.Add(side);
+                }
+                else {
+                    Cretaceous.Side = side;
+                }
             }
         }
         /// <summary>
@@ -69,7 +92,16 @@ namespace PointOfSale
             if (sender is FrameworkElement element)
             {
                 side.Size =(DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
-                NavigationService.Navigate(new MenuCategorySelection());
+                if (combo != true)
+                {
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
+                else
+                {
+                    Cretaceous.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+                    Cretaceous.Side = side;
+                    NavigationService.Navigate(new ComboCustomization(Cretaceous));
+                }
             }
         }
         /// <summary>
@@ -82,7 +114,14 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new MeteorMacAndCheese();
-                order.Add(side);
+                if (combo != true)
+                {
+                    order.Add(side);
+                }
+                else
+                {
+                    Cretaceous.Side = side;
+                }
             }
         }
         /// <summary>
@@ -95,7 +134,14 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new MezzorellaSticks();
-                order.Add(side);
+                if (combo != true)
+                {
+                    order.Add(side);
+                }
+                else
+                {
+                    Cretaceous.Side = side;
+                }
             }
         }
         /// <summary>
@@ -108,7 +154,14 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new Triceritots();
-                order.Add(side);
+                if (combo != true)
+                {
+                    order.Add(side);
+                }
+                else
+                {
+                    Cretaceous.Side = side;
+                }
             }
         }
     }

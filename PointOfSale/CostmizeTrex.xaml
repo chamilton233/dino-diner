@@ -1,4 +1,4 @@
-﻿<Page x:Class="PointOfSale.BrontowerstCostomize"
+﻿<Page x:Class="PointOfSale.CostmizeTrex"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,12 +6,12 @@
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="BrontowerstCostomize">
+      Title="CostmizeTrex">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.25*"/>
-            <RowDefinition/>
+            <RowDefinition />
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -21,11 +21,16 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Bottom"> Coustomize Brontowurst:</TextBlock>
-
+        <TextBlock Grid.Column="0" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Bottom" Grid.ColumnSpan="3"> Coustomize T-Rex King Burgur:</TextBlock>
         <Button Grid.Row="1" Grid.Column="1" Click="HoldBun_Click">Hold Bun</Button>
-        <Button Grid.Row="1" Grid.Column="2" Click="HoldOnions_Click">Hold Onions</Button>
-        <Button Grid.Row="1" Click="HoldPeppers_Click">Hold Peppers</Button>
+        <Button Grid.Row="1" Grid.Column="2" Click="HoldKetchup_Click">Hold Ketchup</Button>
+        <Button Grid.Row="1" Click="HoldMustard_Click">Hold Mustard</Button>
+        <Button Grid.Row="2" Click="HoldPickle_Click">Hold Pickles</Button>
+        <Button Grid.Row="2" Grid.Column="2" Click="HoldLettuce_Click">Hold Lettuce</Button>
+        <Button Grid.Row="2"  Grid.Column="1"  Click="HoldOnion_Click">Hold Onion</Button>
+        <Button Grid.Row="3"  Grid.Column="1"  Click="HoldTomato_Click">Hold Tomato</Button>
+        <Button Grid.Row="3" Click="HoldMayo_Click">Hold Mayo</Button>
+
         <Button Click="Done_Click" Grid.Row="3" Grid.Column="2">Done</Button>
     </Grid>
 </Page>

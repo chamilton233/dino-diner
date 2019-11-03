@@ -1,12 +1,12 @@
-﻿<Page x:Class="PointOfSale.CostomizePBJ"
+﻿<Page x:Class="PointOfSale.CostomizeWings"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="600"
-      Title="CostomizePBJ">
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CostomizeWings">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -21,10 +21,8 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Bottom" Grid.ColumnSpan="3"> Coustomize Prehistoric PB&amp;J:</TextBlock>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Bottom" Grid.ColumnSpan="3"> Coustomize Pterodactyl Wings:</TextBlock>
 
-        <Button Grid.Row="1" Grid.Column="1" Click="OnHoldPeanutButter_Click">Hold Peanut Butter</Button>
-        <Button Grid.Row="1" Click="OnHoldJelly_Click">Hold Jelly</Button>
         <Button Click="Done_Click" Grid.Row="3" Grid.Column="2">Done</Button>
     </Grid>
 </Page>

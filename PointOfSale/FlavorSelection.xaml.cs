@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu.Drinks;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -22,12 +23,25 @@ namespace PointOfSale
     public partial class FlavorSelection : Page
     {
         Sodasaurus sodasaurus;
+        CretaceousCombo Cretaceous;
+        bool combo = false;
         /// <summary>
         /// intializes this page
         /// </summary>
         public FlavorSelection(Sodasaurus soda)
         {
             sodasaurus = soda;
+            InitializeComponent();
+        }
+        /// <summary>
+        /// constuctor for combo 
+        /// </summary>
+        /// <param name="soda"></param>
+        public FlavorSelection(CretaceousCombo soda)
+        {
+            Cretaceous = soda;
+            combo = true;
+            sodasaurus = (Sodasaurus)soda.Drink;
             InitializeComponent();
         }
         /// <summary>
@@ -40,9 +54,31 @@ namespace PointOfSale
             if (sender is FrameworkElement element)
             {
                 sodasaurus.Flavor = (SodasaurusFlavor)Enum.Parse(typeof(SodasaurusFlavor), element.Tag.ToString());
-                NavigationService.Navigate(new DrinkSelection(sodasaurus));
+                if (!combo)
+                {
+                }
+                else
+                {
+                    Cretaceous.Drink = sodasaurus;
+                }
             }
 
+        }
+        /// <summary>
+        /// functionality for the done click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Done_Click(object sender, RoutedEventArgs e)
+        {
+            if (!combo)
+            {
+                NavigationService.Navigate(new DrinkSelection(sodasaurus));
+            }
+            else
+            {
+                NavigationService.Navigate(new DrinkSelection(Cretaceous));
+            }
         }
     }
 }

@@ -17,49 +17,49 @@
             </Style>
         </WrapPanel.Resources>
         
-        <Button Click="Button_Click" Background="White">
+        <Button Click="Bronto_Click" Background="White">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-01.png"></Image>
                 <TextBlock>Brontoworst Combo</TextBlock> 
             </StackPanel>
         </Button>
 
-        <Button Click="Button_Click" Background="White">
+        <Button Click="Dino_Click" Background="White">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-02.png"></Image>
                 <TextBlock>Dino-Nuggets Combo</TextBlock>
             </StackPanel>
         </Button>
 
-        <Button Background="White" Click="Button_Click">
+        <Button Background="White" Click="Prehis_Click">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-03.png"></Image>
                 <TextBlock>Prehisotric PB&amp;J Combo</TextBlock>
             </StackPanel>
         </Button>
 
-        <Button Background="White" Click="Button_Click">
+        <Button Background="White" Click="Wings_Click">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-04.png"></Image>
                 <TextBlock>Pterodactyl Wings Combo</TextBlock>
             </StackPanel>
         </Button>
 
-        <Button Background="White" Click="Button_Click">
+        <Button Background="White" Click="Steak_Click">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-05.png"></Image>
                 <TextBlock>Steakosaurus Combo</TextBlock>
             </StackPanel>
         </Button>
 
-        <Button Background="White" Click="Button_Click">
+        <Button Background="White" Click="Trex_Click">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-06.png"></Image>
                 <TextBlock>T-Rex Kingburgur Combo</TextBlock>
             </StackPanel>
         </Button>
 
-        <Button Background="White" Click="Button_Click">
+        <Button Background="White" Click="Veloci_Click">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-07.png"></Image>
                 <TextBlock>Veloci-Wrap Combo</TextBlock>

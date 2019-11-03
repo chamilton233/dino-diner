@@ -43,6 +43,10 @@
             <Button Background="White" Tag="Vanilla" Click="Falvor_Click">
                 Vanilla
             </Button>
+            
+            <Button Background="White" Tag="Vanilla" Click="Done_Click">
+                Done
+            </Button>
         </WrapPanel>
     </Grid>
 </Page>

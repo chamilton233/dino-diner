@@ -18,55 +18,45 @@ using DinoDiner.Menu;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CostomizeDinoNuggets.xaml
+    /// Interaction logic for CostomizeWings.xaml
     /// </summary>
-    public partial class CostomizeDinoNuggets : Page
+    public partial class CostomizeWings : Page
     {
         /// <summary>
-        /// the nuggets to be manipulated
+        /// the wings to be maniplutated
         /// </summary>
-        private DinoNuggets Nuggets;
+        private PterodactylWings wings;
         /// <summary>
-        /// if it is a combo
+        /// the combo if it part of one
+        /// </summary>
+        private CretaceousCombo Cretaceous;
+        /// <summary>
+        /// if it is part of a combo
         /// </summary>
         bool combo;
         /// <summary>
-        /// the combo it might be part of
+        /// the constuctor without a combo
         /// </summary>
-        CretaceousCombo Cretaceous;
-        /// <summary>
-        /// constuctor with out combo
-        /// </summary>
-        /// <param name="dino"></param>
-        public CostomizeDinoNuggets(DinoNuggets dino)
+        /// <param name="pterodactyl"></param>
+        public CostomizeWings(PterodactylWings pterodactyl)
         {
             InitializeComponent();
-            Nuggets = dino;
+            wings = pterodactyl;
             combo = false;
         }
         /// <summary>
-        /// constuctior with combo
+        /// the constuctor with the combo
         /// </summary>
-        /// <param name="dino"></param>
-        public CostomizeDinoNuggets(CretaceousCombo dino)
+        /// <param name="pterodactyl"></param>
+        public CostomizeWings(CretaceousCombo pterodactyl)
         {
             InitializeComponent();
-            Cretaceous = dino;
-            Nuggets = (DinoNuggets)dino.Entree;
+            wings =(PterodactylWings) pterodactyl.Entree;
+            Cretaceous = pterodactyl;
             combo = true;
         }
         /// <summary>
-        /// addss a nugget
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddNugget_Click(object sender, RoutedEventArgs e)
-        {
-            Nuggets.AddNugget();
-            extraNuggets++;
-        }
-        /// <summary>
-        /// functionality on doen click
+        /// the done finctionality
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

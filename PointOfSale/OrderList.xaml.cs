@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu;
+using DinoDiner.Menu.Entrees;
 using DinoDiner.Menu.Sides;
 using DinoDiner.Menu.Drinks;
 namespace PointOfSale
@@ -22,7 +23,13 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderList : UserControl
     {
+        /// <summary>
+        /// navigation service
+        /// </summary>
         public NavigationService NavigationService { get; set; }
+        /// <summary>
+        /// constuctor
+        /// </summary>
         public OrderList()
         {
             InitializeComponent();
@@ -41,6 +48,41 @@ namespace PointOfSale
             if (OrderItems.SelectedItem is Drink drink)
             {
                 NavigationService.Navigate(new DrinkSelection(drink));
+            }
+            if (OrderItems.SelectedItem is CretaceousCombo combo)
+            {
+                NavigationService.Navigate(new ComboCustomization(combo));
+            }
+            if(OrderItems.SelectedItem is Entree entree)
+            {
+                if (entree is Brontowurst brontowurst)
+                {
+                    NavigationService.Navigate(new BrontowerstCostomize(brontowurst));
+                }
+                if (entree is DinoNuggets dino)
+                {
+                    NavigationService.Navigate(new CostomizeDinoNuggets(dino));
+                }
+                if (entree is PrehistoricPBJ prehistoric)
+                {
+                    NavigationService.Navigate(new CostomizePBJ(prehistoric));
+                }
+                if (entree is SteakosaurusBurger steakosaurus)
+                {
+                    NavigationService.Navigate(new CostomizeSteak(steakosaurus));
+                }
+                if (entree is TRexKingBurger rex)
+                {
+                    NavigationService.Navigate(new CostmizeTrex(rex));
+                }
+                if (entree is VelociWrap wrap)
+                {
+                    NavigationService.Navigate(new CostomizeVelociWrap(wrap));
+                }
+                if (entree is PterodactylWings wings)
+                {
+                    NavigationService.Navigate(new CostomizeWings(wings));
+                }
             }
         }
         /// <summary>
