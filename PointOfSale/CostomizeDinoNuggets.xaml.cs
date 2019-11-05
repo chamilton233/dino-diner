@@ -63,7 +63,6 @@ namespace PointOfSale
         private void AddNugget_Click(object sender, RoutedEventArgs e)
         {
             Nuggets.AddNugget();
-            extraNuggets++;
         }
         /// <summary>
         /// functionality on doen click
