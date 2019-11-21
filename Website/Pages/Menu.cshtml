@@ -1,0 +1,96 @@
+﻿@page
+@model Website.Pages.MenuModel
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<h2>Menu</h2>
+
+<h2>Entrees</h2>
+@foreach (DinoDiner.Menu.Entrees.Entree e in Model.entrees)
+{
+    <div class="menu-item">
+        <label>
+            <h3>@e.ToString()</h3>
+        </label>
+        <label>
+            <p>Price: @e.Price</p>
+        </label>
+        <label>
+            <p>Calories: @e.Calories</p>
+        </label>
+        <label>
+            Ingredients:
+            @foreach (string s in e.Ingredients)
+            {
+                <p>@s</p>
+            }
+        </label>
+    </div>
+}
+<h2>Drinks</h2>
+@foreach (DinoDiner.Menu.Drinks.Drink d in Model.drinks)
+{
+    <div class="menu-item">
+        <label>
+            <h3>@d.ToString()</h3>
+        </label>
+        <label>
+            <p>Price: @d.Price</p>
+        </label>
+        <label>
+            <p>Calories: @d.Calories</p>
+        </label>
+        <label>
+            Ingredients:
+            @foreach (string s in d.Ingredients)
+            {
+                <p>@s</p>
+            }
+        </label>
+    </div>
+}
+<h2>Sides</h2>
+@foreach (DinoDiner.Menu.Sides.Side s in Model.sides)
+{
+    <div class="menu-item">
+        <label>
+            <h3>@s.ToString()</h3>
+        </label>
+        <label>
+            <p>Price: @s.Price</p>
+        </label>
+        <label>
+            <p>Calories: @s.Calories</p>
+        </label>
+        <label>
+            Ingredients:
+            @foreach (string d in s.Ingredients)
+            {
+                <p>@d</p>
+            }
+        </label>
+    </div>
+}
+<h2>Combos</h2>
+@foreach (DinoDiner.Menu.CretaceousCombo c in Model.combos)
+{
+    <div class="menu-item">
+        <label>
+            <h3>@c.ToString()</h3>
+        </label>
+        <label>
+            <p>Price: @c.Price</p>
+        </label>
+        <label>
+            <p>Calories: @c.Calories</p>
+        </label>
+        <label>
+            Ingredients:
+            @foreach (string s in c.Ingredients)
+            {
+                <p>@s</p>
+            }
+        </label>
+    </div>
+}
