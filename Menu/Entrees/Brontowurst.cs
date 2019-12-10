@@ -28,6 +28,7 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
+                ingreadients = new List<string>();
                 if (Bun) ingreadients.Add("Whole Wheat Bun");
                 if (Peppers) ingreadients.Add("Peppers");
                 if (Onions) ingreadients.Add("Onion");

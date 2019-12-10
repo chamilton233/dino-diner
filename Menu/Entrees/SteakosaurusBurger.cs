@@ -31,7 +31,8 @@ namespace DinoDiner.Menu.Entrees
         public override List<string> Ingredients
         {
             get
-            { 
+            {
+                ingreadients = new List<string>();
                 if (Bun) ingreadients.Add("Whole Wheat Bun");
                 if (Pickle) ingreadients.Add("Pickle");
                 if (Ketchup) ingreadients.Add("Ketchup");
